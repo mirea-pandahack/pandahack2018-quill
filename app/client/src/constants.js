@@ -1,21 +1,21 @@
 angular.module('reg')
     .constant('EVENT_INFO', {
-        NAME: 'HackMIT 2015',
+        NAME: 'PandaHack 2018',
     })
     .constant('DASHBOARD', {
-        UNVERIFIED: 'You should have received an email asking you verify your email. Click the link in the email and you can start your application!',
-        INCOMPLETE_TITLE: 'You still need to complete your application!',
-        INCOMPLETE: 'If you do not complete your application before the [APP_DEADLINE], you will not be considered for the admissions lottery!',
-        SUBMITTED_TITLE: 'Your application has been submitted!',
-        SUBMITTED: 'Feel free to edit it at any time. However, once registration is closed, you will not be able to edit it any further.\nAdmissions will be determined by a random lottery. Please make sure your information is accurate before registration is closed!',
-        CLOSED_AND_INCOMPLETE_TITLE: 'Unfortunately, registration has closed, and the lottery process has begun.',
-        CLOSED_AND_INCOMPLETE: 'Because you have not completed your profile in time, you will not be eligible for the lottery process.',
-        ADMITTED_AND_CAN_CONFIRM_TITLE: 'You must confirm by [CONFIRM_DEADLINE].',
-        ADMITTED_AND_CANNOT_CONFIRM_TITLE: 'Your confirmation deadline of [CONFIRM_DEADLINE] has passed.',
-        ADMITTED_AND_CANNOT_CONFIRM: 'Although you were accepted, you did not complete your confirmation in time.\nUnfortunately, this means that you will not be able to attend the event, as we must begin to accept other applicants on the waitlist.\nWe hope to see you again next year!',
-        CONFIRMED_NOT_PAST_TITLE: 'You can edit your confirmation information until [CONFIRM_DEADLINE]',
-        DECLINED: 'We\'re sorry to hear that you won\'t be able to make it to HackMIT 2015! :(\nMaybe next year! We hope you see you again soon.',
+        UNVERIFIED: 'Вы должны были получить электронное письмо с просьбой подтвердить вашу электронную почту. Нажмите ссылку в письме, и вы можете начать свою регистрацию! ',
+        INCOMPLETE_TITLE: 'Вам по-прежнему нужно заполнить заявку!',
+        INCOMPLETE: 'Если вы не закончите регистрацию до [APP_DEADLINE],то мы не сможем одобрить вашу одобрить вашу заявку!',
+        SUBMITTED_TITLE: 'Ваше заявка подтверждена!',
+        SUBMITTED: 'Не стесняйтесь редактировать заявку в любое время. Однако, как только регистрация будет закрыта, вы не сможете ее отредактировать дальше.\nПожалуйста, убедитесь, что ваша информация верна, прежде чем регистрация будет закрыта!',
+        CLOSED_AND_INCOMPLETE_TITLE: 'К сожалению, регистрация закрыта. ',
+        CLOSED_AND_INCOMPLETE: 'Так как вы не заполнили свою анкету вовремя, вы не будите допущены к хакатону.',
+        ADMITTED_AND_CAN_CONFIRM_TITLE: 'Вы должны подтвердить до [CONFIRM_DEADLINE].',
+        ADMITTED_AND_CANNOT_CONFIRM_TITLE: 'Время подтверждения [CONFIRM_DEADLINE] прошло.',
+        ADMITTED_AND_CANNOT_CONFIRM: 'Несмотря на то,что вы были приняты, вы не заполнили ваше подтверждение вовремя \n К сожалению, это означает, что вы не сможете принять участие в мероприятии, так как мы должны начать принимать других претендентов в списке ожидания \nМы надеемся увидеть вас снова в следующем году!!',
+        CONFIRMED_NOT_PAST_TITLE: 'Вы можете редактировать информацию о подтверждении до [CONFIRM_DEADLINE]',
+        DECLINED: 'Мы сожалеем, что вы не сможете попасть на PandaHack 2018! ! :(\nМы надеемся, что скоро увидимся снова.',
     })
     .constant('TEAM',{
-        NO_TEAM_REG_CLOSED: 'Unfortunately, it\'s too late to enter the lottery with a team.\nHowever, you can still form teams on your own before or during the event!',
+        NO_TEAM_REG_CLOSED: 'К сожадению, уже поздно регестрироваться с командой.\nТем не менее, вы по-прежнему можете формировать команду самостоятельно или во время мероприятия!',
     });
