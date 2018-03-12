@@ -38,7 +38,6 @@ angular.module('reg')
 
             $scope.dashState = function (status) {
                 var user = $scope.user;
-                console.log(user.status)
                 console.log(user.status.name)
 
                 switch (status) {
