@@ -1,6 +1,6 @@
 <div id="team" class="page">
   <div class="divided title">
-    Team
+    Команда
   </div>
   <div class="ui stackable centered page grid">
     <div class="column">
@@ -22,7 +22,7 @@
           ng-show="!user.teamCode && regIsOpen">
 
           <div class="title">
-            Join or Create a Team
+            Создать или присоединиться к команде
           </div>
 
           <br>
@@ -31,7 +31,7 @@
             <input
               class="ui input"
               type="text"
-              placeholder="Choose your team name..."
+              placeholder="Выберите название команды..."
               ng-model="code">
           </div>
 
@@ -39,7 +39,7 @@
             <button
               class="ui fluid pink button"
               ng-click="joinTeam()">
-              Join or Create Team
+                Присоединиться к команде или создать свою
             </button>
           </div>
 
@@ -49,7 +49,7 @@
           ng-show="user.teamCode">
           <div class="form">
             <div class="title">
-              Your Team Name:
+              Название команды:
             </div>
           </div>
           <br>
@@ -63,14 +63,14 @@
 
           <div class="form">
             <div class="title">
-              Your Team:
+              Название команды:
             </div>
           </div>
 
           <p
             ng-repeat="user in teammates"
             class="item">
-            {{user.profile.name || 'Somebody (has not filled out their profile!)'}}
+            {{user.profile.name || 'Кто-то (не заполнил свой профиль!)'}}
           </p>
 
           <div
@@ -79,7 +79,7 @@
 
             <button
               class="ui fluid red button"
-              ng-click="leaveTeam()">Leave Team</button>
+              ng-click="leaveTeam()">Покинуть команду</button>
           </div>
 
         </div>

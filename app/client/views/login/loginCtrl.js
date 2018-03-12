@@ -47,8 +47,8 @@ angular.module('reg')
         var email = $scope.email;
         AuthService.sendResetEmail(email);
         sweetAlert({
-          title: "Don't Sweat!",
-          text: "An email should be sent to you shortly.",
+          title: "Без паники!",
+          text: "Письмо скоро будет отправлено.",
           type: "success",
           confirmButtonColor: "#e76482"
         });

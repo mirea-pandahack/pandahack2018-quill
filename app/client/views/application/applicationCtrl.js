@@ -72,8 +72,8 @@ angular.module('reg')
           .updateProfile(Session.getUserId(), $scope.user.profile)
           .success(function(data){
             sweetAlert({
-              title: "Awesome!",
-              text: "Your application has been saved.",
+              title: "Ееееее!",
+              text: "Ваша заявка сохранена.",
               type: "success",
               confirmButtonColor: "#e76482"
             }, function(){
@@ -81,7 +81,7 @@ angular.module('reg')
             });
           })
           .error(function(res){
-            sweetAlert("Uh oh!", "Something went wrong.", "error");
+            sweetAlert("О нет!", "Что-то пошло не так.", "error");
           });
       }
 
@@ -116,7 +116,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please enter your name.'
+                  prompt: 'Введите Ваше ФИО.'
                 }
               ]
             },
@@ -125,7 +125,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please enter your school name.'
+                  prompt: 'Название Института/Университета/Школы.'
                 }
               ]
             },
@@ -134,7 +134,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please select your graduation year.'
+                  prompt: 'Выберите год выпуска.'
                 }
               ]
             },
@@ -143,7 +143,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please select a gender.'
+                  prompt: 'Ваш пол.'
                 }
               ]
             },
@@ -152,7 +152,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'allowMinors',
-                  prompt: 'You must be an adult, or an MIT student.'
+                  prompt: 'Вы точно учащийся?.'
                 }
               ]
             }
@@ -167,7 +167,7 @@ angular.module('reg')
           _updateUser();
         }
         else{
-          sweetAlert("Uh oh!", "Please Fill The Required Fields", "error");
+          sweetAlert("О нет!", "Пожалуйста, заполните обязательные поля", "error");
         }
       };
 

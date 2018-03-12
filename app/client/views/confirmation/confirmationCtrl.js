@@ -58,8 +58,8 @@ angular.module('reg')
           .updateConfirmation(user._id, confirmation)
           .success(function(data){
             sweetAlert({
-              title: "Woo!",
-              text: "You're confirmed!",
+              title: "Вау!",
+              text: "Вы приняты!",
               type: "success",
               confirmButtonColor: "#e76482"
             }, function(){
@@ -67,7 +67,7 @@ angular.module('reg')
             });
           })
           .error(function(res){
-            sweetAlert("Uh oh!", "Something went wrong.", "error");
+            sweetAlert("О нет!", "Что-то пошло не так.", "error");
           });
       }
 
@@ -80,7 +80,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please give us a shirt size!'
+                  prompt: 'Размер футболки!'
                 }
               ]
             },
@@ -89,7 +89,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please enter a phone number.'
+                  prompt: 'Номер телефона.'
                 }
               ]
             },
@@ -98,7 +98,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please type your digital signature.'
+                  prompt: 'Я согласен.'
                 }
               ]
             },
@@ -107,7 +107,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please type your digital signature.'
+                  prompt: 'Я согласен.'
                 }
               ]
             },
@@ -116,7 +116,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Please type your digital signature.'
+                  prompt: 'Я согласен.'
                 }
               ]
             },

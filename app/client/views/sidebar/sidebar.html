@@ -8,7 +8,7 @@
   <div ui-sref-active="active"
        ui-sref="app.dashboard"
        class="item">
-    Dashboard
+    Личный кабинет
   </div>
 
   <div ng-show="currentUser.verified">
@@ -18,7 +18,7 @@
       ui-sref="app.application"
       ng-show="!currentUser.status.declined"
       class="item">
-      Application
+      Заявка на участие
     </div>
 
     <div
@@ -26,7 +26,7 @@
       ui-sref="app.confirmation"
       ng-show="!pastConfirmation && currentUser.status.admitted && !currentUser.status.declined"
       class="item">
-      Confirmation
+      Подтверждение
     </div>
 
     <div
@@ -34,7 +34,7 @@
       ui-sref="app.team"
       ng-show="!currentUser.status.declined"
       class="item">
-      Team
+      Команда
     </div>
 
     <div
@@ -49,7 +49,7 @@
 
   <div class="item"
        ng-click="logout()">
-    Logout
+    Выйти
   </div>
 
   <div class="note">
