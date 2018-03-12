@@ -25,7 +25,7 @@
                        ng-model="email">
               </div>
               <div class="field">
-                <label> Password</label>
+                <label> Пароль</label>
                 <input type="password"
                        id='password'
                        placeholder="Password (at least 6 characters)"
@@ -35,7 +35,7 @@
                 <button id="login-password"
                         type="submit"
                         class="fluid ui login button">
-                        Login
+                        Войти
                 </button>
               </div>
             </form>
@@ -48,7 +48,7 @@
                       type="submit"
                       class="fluid ui register button"
                       ng-click="register()">
-                      Register
+                      Зарегистрироваться
               </button>
             </div>
           </div>
@@ -68,7 +68,7 @@
                 <button id="forgot-password"
                         type="submit"
                         class="fluid ui login button">
-                        Send Reset Email
+                        Отправить письмо для сброса пароля
                 </button>
               </div>
             </form>
@@ -79,13 +79,13 @@
 
         <div ng-show="loginState === 'login'" class="forgot">
           <a href="#" ng-click="setLoginState('forgot')">
-            Forgot Password?
+            Забыли пароль?
           </a>
         </div>
 
         <div ng-show="loginState === 'forgot'" class="forgot">
           <a href="#" ng-click="setLoginState('login')">
-            {{regIsOpen ? 'Login or Register' : 'Login'}}
+            {{regIsOpen ? 'Войти или Зарегистрироваться' : 'Войти'}}
           </a>
         </div>
 

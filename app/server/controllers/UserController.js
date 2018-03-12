@@ -26,7 +26,7 @@ function endsWith(s, test){
 function canRegister(email, password, callback){
 
   if (!password || password.length < 6){
-    return callback({ message: "Password must be 6 or more characters."}, false);
+    return callback({ message: "Пароль должен содержать 6 или более символов."}, false);
   }
 
   // Check if its within the registration window.
@@ -39,13 +39,13 @@ function canRegister(email, password, callback){
 
     if (now < times.timeOpen){
       return callback({
-        message: "Registration opens in " + moment(times.timeOpen).fromNow() + "!"
+        message: "Регистрация откроется " + moment(times.timeOpen).fromNow() + "!"
       });
     }
 
     if (now > times.timeClose){
       return callback({
-        message: "Sorry, registration is closed."
+        message: "Простите, регистрация закрыта."
       });
     }
 
@@ -88,13 +88,13 @@ UserController.loginWithPassword = function(email, password, callback){
 
   if (!password || password.length === 0){
     return callback({
-      message: 'Please enter a password'
+      message: 'Пожалуйста, введите пароль'
     });
   }
 
   if (!validator.isEmail(email)){
     return callback({
-      message: 'Invalid email'
+      message: 'Невалидный email'
     });
   }
 
@@ -107,12 +107,12 @@ UserController.loginWithPassword = function(email, password, callback){
       }
       if (!user) {
         return callback({
-          message: "We couldn't find you!"
+          message: "Не можем найти вас!"
         });
       }
       if (!user.checkPassword(password)) {
         return callback({
-          message: "That's not the right password."
+          message: "Неверный пароль."
         });
       }
 
@@ -137,7 +137,7 @@ UserController.createUser = function(email, password, callback) {
 
   if (typeof email !== "string"){
     return callback({
-      message: "Email must be a string."
+      message: "Email должен быть строкой."
     });
   }
 
@@ -158,7 +158,7 @@ UserController.createUser = function(email, password, callback) {
         // Duplicate key error codes
         if (err.name === 'MongoError' && (err.code === 11000 || err.code === 11001)) {
           return callback({
-            message: 'An account for this email already exists.'
+            message: 'Аккаунт с таким email уже существует.'
           });
         }
 
@@ -285,13 +285,13 @@ UserController.updateProfileById = function (id, profile, callback){
 
       if (now < times.timeOpen){
         return callback({
-          message: "Registration opens in " + moment(times.timeOpen).fromNow() + "!"
+          message: "Регистрация откроется " + moment(times.timeOpen).fromNow() + "!"
         });
       }
 
       if (now > times.timeClose){
         return callback({
-          message: "Sorry, registration is closed."
+          message: "Простите, регистрация закрыта."
         });
       }
     });
@@ -334,7 +334,7 @@ UserController.updateConfirmationById = function (id, confirmation, callback){
     // that's okay.
     if (Date.now() >= user.status.confirmBy && !user.status.confirmed){
       return callback({
-        message: "You've missed the confirmation deadline."
+        message: "Вы пропустили срок подтверждения."
       });
     }
 
@@ -421,7 +421,7 @@ UserController.getTeammates = function(id, callback){
 
     if (!code){
       return callback({
-        message: "You're not on a team."
+        message: "Вы не состоите в какой-либо команде."
       });
     }
 
@@ -444,13 +444,13 @@ UserController.createOrJoinTeam = function(id, code, callback){
 
   if (!code){
     return callback({
-      message: "Please enter a team name."
+      message: "Пожалуйста, введите название команды."
     });
   }
 
   if (typeof code !== 'string') {
     return callback({
-      message: "Get outta here, punk!"
+      message: "Эй, хакер, прекрати!"
     });
   }
 
@@ -462,7 +462,7 @@ UserController.createOrJoinTeam = function(id, code, callback){
     // Check to see if this team is joinable (< team max size)
     if (users.length >= maxTeamSize){
       return callback({
-        message: "Team is full."
+        message: "Команда уже заполнена."
       });
     }
 
@@ -571,7 +571,7 @@ UserController.changePassword = function(id, oldPassword, newPassword, callback)
         callback);
       } else {
         return callback({
-          message: 'Incorrect password'
+          message: 'Неверный пароль'
         });
       }
     });
@@ -592,7 +592,7 @@ UserController.resetPassword = function(token, password, callback){
 
   if (password.length < 6){
     return callback({
-      message: 'Password must be 6 or more characters.'
+      message: 'Пароль должен содержать 6 или более символов.'
     });
   }
 
@@ -616,7 +616,7 @@ UserController.resetPassword = function(token, password, callback){
 
         Mailer.sendPasswordChangedEmail(user.email);
         return callback(null, {
-          message: 'Password successfully reset!'
+          message: 'Пароль успешно сброшен!'
         });
       });
   });
