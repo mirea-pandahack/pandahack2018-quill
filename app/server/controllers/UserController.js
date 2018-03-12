@@ -6,6 +6,7 @@ var Stats = require('../services/stats');
 
 var validator = require('validator');
 var moment = require('moment');
+moment.locale('ru');
 
 var UserController = {};
 
