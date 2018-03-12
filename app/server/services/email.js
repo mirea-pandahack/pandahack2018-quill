@@ -88,7 +88,7 @@ controller.sendVerificationEmail = function(email, token, callback) {
 
   var options = {
     to: email,
-    subject: "["+HACKATHON_NAME+"] - Verify your email"
+    subject: "["+HACKATHON_NAME+"] - Подтверждение email"
   };
 
   var locals = {
@@ -125,16 +125,16 @@ controller.sendPasswordResetEmail = function(email, token, callback) {
 
   var options = {
     to: email,
-    subject: "["+HACKATHON_NAME+"] - Password reset requested!"
+    subject: "["+HACKATHON_NAME+"] - Запрошен сброс пароля!"
   };
 
   var locals = {
-    title: 'Password Reset Request',
+    title: 'Запрошен сброс пароля',
     subtitle: '',
-    description: 'Somebody (hopefully you!) has requested that your password be reset. If ' +
-      'this was not you, feel free to disregard this email. This link will expire in one hour.',
+    description: 'Кто-то (надеемся, что Вы!) запросили сброс пароля. Если ' +
+      'это были не Вы, то спокойно удаляйте это письмо. Ссылка станет неактивной через час.',
     actionUrl: ROOT_URL + '/reset/' + token,
-    actionName: "Reset Password"
+    actionName: "Сбросить пароль"
   };
 
   /**
@@ -166,12 +166,12 @@ controller.sendPasswordChangedEmail = function(email, callback){
 
   var options = {
     to: email,
-    subject: "["+HACKATHON_NAME+"] - Your password has been changed!"
+    subject: "["+HACKATHON_NAME+"] - Ваш пароль изменён!"
   };
 
   var locals = {
-    title: 'Password Updated',
-    body: 'Somebody (hopefully you!) has successfully changed your password.',
+    title: 'Ваш пароль изменён',
+    body: 'Кто-то (надеемся, что Вы!) успешно изменили пароль от учетной записи.',
   };
 
   /**
