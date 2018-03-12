@@ -43,7 +43,7 @@ angular.module('reg')
                         user.statusRu = 'Не подтверждён EMAIL';
                         return !user.verified;
                     case 'openAndIncomplete':
-                        user.statusRu = '';
+                        user.statusRu = 'Не заполнена заявка';
                         return regIsOpen && user.verified && !user.status.completedProfile;
                     case 'openAndSubmitted':
                         user.statusRu = '';
