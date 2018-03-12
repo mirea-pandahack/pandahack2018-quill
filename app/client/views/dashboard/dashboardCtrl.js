@@ -41,26 +41,34 @@ angular.module('reg')
                         user.statusRu = 'Не подтверждён EMAIL';
                         return !user.verified;
                     case 'openAndIncomplete':
+                        user.statusRu = '';
                         return regIsOpen && user.verified && !user.status.completedProfile;
                     case 'openAndSubmitted':
+                        user.statusRu = '';
                         return regIsOpen && user.status.completedProfile && !user.status.admitted;
                     case 'closedAndIncomplete':
+                        user.statusRu = '';
                         return !regIsOpen && !user.status.completedProfile && !user.status.admitted;
                     case 'closedAndSubmitted': // Waitlisted State
+                        user.statusRu = '';
                         return !regIsOpen && user.status.completedProfile && !user.status.admitted;
                     case 'admittedAndCanConfirm':
+                        user.statusRu = '';
                         return !pastConfirmation &&
                             user.status.admitted &&
                             !user.status.confirmed &&
                             !user.status.declined;
                     case 'admittedAndCannotConfirm':
+                        user.statusRu = '';
                         return pastConfirmation &&
                             user.status.admitted &&
                             !user.status.confirmed &&
                             !user.status.declined;
                     case 'confirmed':
+                        user.statusRu = '';
                         return user.status.admitted && user.status.confirmed && !user.status.declined;
                     case 'declined':
+                        user.statusRu = '';
                         return user.status.declined;
                 }
                 return false;
