@@ -34,8 +34,11 @@ angular.module('reg')
             // Is it past the user's confirmation time?
             var pastConfirmation = $scope.pastConfirmation = Utils.isAfter(user.status.confirmBy);
 
+            let userstatusRu = 'Тут будет Ваш статус';
+
             $scope.dashState = function (status) {
                 var user = $scope.user;
+                console.log(user.status)
                 console.log(user.status.name)
 
                 switch (status) {
@@ -46,31 +49,31 @@ angular.module('reg')
                         user.statusRu = 'Не заполнена заявка';
                         return regIsOpen && user.verified && !user.status.completedProfile;
                     case 'openAndSubmitted':
-                        user.statusRu = '';
+                        user.statusRu = 'Заявка отправлена';
                         return regIsOpen && user.status.completedProfile && !user.status.admitted;
                     case 'closedAndIncomplete':
-                        user.statusRu = '';
+                        user.statusRu = 'closedAndIncomplete';
                         return !regIsOpen && !user.status.completedProfile && !user.status.admitted;
                     case 'closedAndSubmitted': // Waitlisted State
-                        user.statusRu = '';
+                        user.statusRu = 'closedAndSubmitted';
                         return !regIsOpen && user.status.completedProfile && !user.status.admitted;
                     case 'admittedAndCanConfirm':
-                        user.statusRu = '';
+                        user.statusRu = 'admittedAndCanConfirm';
                         return !pastConfirmation &&
                             user.status.admitted &&
                             !user.status.confirmed &&
                             !user.status.declined;
                     case 'admittedAndCannotConfirm':
-                        user.statusRu = '';
+                        user.statusRu = 'admittedAndCannotConfirm';
                         return pastConfirmation &&
                             user.status.admitted &&
                             !user.status.confirmed &&
                             !user.status.declined;
                     case 'confirmed':
-                        user.statusRu = '';
+                        user.statusRu = 'Заявка подтверждена';
                         return user.status.admitted && user.status.confirmed && !user.status.declined;
                     case 'declined':
-                        user.statusRu = '';
+                        user.statusRu = 'Заявка отклонена';
                         return user.status.declined;
                 }
                 return false;
