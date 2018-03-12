@@ -6,7 +6,7 @@ var Stats = require('../services/stats');
 
 var validator = require('validator');
 var moment = require('moment');
-moment.locale('ru');
+moment.locale('ru'); //@TODO do we need it here?
 
 var UserController = {};
 
