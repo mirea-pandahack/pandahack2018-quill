@@ -51,6 +51,9 @@ function canRegister(email, password, callback){
 
     // Check for emails.
     Settings.getWhitelistedEmails(function(err, emails){
+    //@TODO: remove this dirty hack. Allow all emails
+        return callback(null, true);
+
       if (err || !emails){
         return callback(err);
       }
