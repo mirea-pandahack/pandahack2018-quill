@@ -72,3 +72,20 @@ If you want stats for your new fields:
 
 ### Email Templates
 To customize the verification and confirmation emails for your event, put your new email templates in `server/templates/` and edit `server/services/email.js`
+
+
+
+
+
+
+
+
+
+
+----------------------
+
+
+Make PR:
+* add telegram
+* add i18n
+* fix https://github.com/techx/quill/issues/57
