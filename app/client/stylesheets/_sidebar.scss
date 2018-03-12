@@ -38,6 +38,11 @@
       padding: 48px;
     }
 
+    &.logo img{
+      width: 150px;
+      height: 150px;
+    }
+
   }
 
   .note {
@@ -73,6 +78,11 @@
     .close {
       color: white;
       font-size: 2em;
+    }
+
+    img{
+      width: 32px;
+      height: 32px;
     }
   }
 
