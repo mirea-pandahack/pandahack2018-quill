@@ -89,3 +89,4 @@ Make PR:
 * add telegram
 * add i18n
 * fix https://github.com/techx/quill/issues/57
+* update readme with(nginx config, SMTP settings and so on)
