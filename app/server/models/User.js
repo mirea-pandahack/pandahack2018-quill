@@ -369,7 +369,7 @@ schema.virtual('status.name').get(function(){
   }
 
   if (!this.verified){
-    return "Не подтверждён";
+    return "unverified";
   }
 
   return "incomplete";
