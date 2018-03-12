@@ -10,13 +10,13 @@
           Ваш статус:
         </div>
         <br>
-
+          {{user.statusRu}}
+          <br>
         <div
           class="state"
           ng-class="user.status.name"
           ng-if="!showWaitlist && !dashState('admittedAndCannotConfirm')">
-          {{user.statusRu}}
-            {{user.status.name}}
+           {{user.status.name}}
         </div>
 
         <div
