@@ -34,11 +34,11 @@ angular.module('reg')
             // Is it past the user's confirmation time?
             var pastConfirmation = $scope.pastConfirmation = Utils.isAfter(user.status.confirmBy);
 
-            let userstatusRu = 'Тут будет Ваш статус';
+            //var userstatusRu = 'Тут будет Ваш статус';
 
             $scope.dashState = function (status) {
                 var user = $scope.user;
-                console.log(user.status.name)
+                console.log(user.status.name);
 
                 switch (status) {
                     case 'unverified':
