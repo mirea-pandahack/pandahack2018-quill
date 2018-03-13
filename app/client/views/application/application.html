@@ -27,23 +27,22 @@
                  ng-model="user.profile.name">
         </div>
 
-        <div class="field" ng-show="autoFilledSchool">
+        <div class="field">
           <label> Название школы/университета/института </label>
-          <input class="ui input"
-                 disabled="disabled"
-                 ng-show="autoFilledSchool"
+          <input type="text"
+                 placeholder="МИРЭА"
                  ng-model="user.profile.school">
         </div>
 
-        <div class="field" ng-show="!autoFilledSchool">
-          <label> Название школы/университета/института </label>
-          <div id="school" class="ui search">
-            <div class="ui input">
-              <input class="prompt" type="text" placeholder="МИРЭА" name="school" ng-model="user.profile.school">
-            </div>
-            <div class="results"></div>
-          </div>
-        </div>
+        <!--<div class="field" ng-show="!autoFilledSchool">-->
+          <!--<label> Название школы/университета/института </label>-->
+          <!--<div id="school" class="ui search">-->
+            <!--<div class="ui input">-->
+              <!--<input class="prompt" type="text" placeholder="МИРЭА" name="school" ng-model="user.profile.school">-->
+            <!--</div>-->
+            <!--<div class="results"></div>-->
+          <!--</div>-->
+        <!--</div>-->
 
         <div class="field">
           <label>Год выпуска</label>
@@ -100,7 +99,7 @@
           </p>
           <div class="ui checkbox">
             <input type="checkbox" id="adult" ng-model="user.profile.adult">
-            <label for="adult">Мне 18 или больше ;)</label>
+            <label for="adult">Я не забуду взять с собой документы</label>
           </div>
         </div>
 

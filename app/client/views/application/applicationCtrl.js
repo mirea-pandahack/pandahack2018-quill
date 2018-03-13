@@ -22,7 +22,7 @@ angular.module('reg')
       }
 
       // Populate the school dropdown
-      populateSchools();
+      //populateSchools();
       _setupForm();
 
       $scope.regIsClosed = Date.now() > Settings.data.timeClose;
@@ -45,26 +45,26 @@ angular.module('reg')
 
         $http
           .get('/assets/schools.csv')
-          .then(function(res){ 
+          .then(function(res){
             $scope.schools = res.data.split('\n');
             $scope.schools.push('Other');
 
             var content = [];
 
-            for(i = 0; i < $scope.schools.length; i++) {                                          
-              $scope.schools[i] = $scope.schools[i].trim(); 
+            for(i = 0; i < $scope.schools.length; i++) {
+              $scope.schools[i] = $scope.schools[i].trim();
               content.push({title: $scope.schools[i]})
             }
 
             $('#school.ui.search')
               .search({
                 source: content,
-                cache: true,     
-                onSelect: function(result, response) {                                    
+                cache: true,
+                onSelect: function(result, response) {
                   $scope.user.profile.school = result.title.trim();
-                }        
-              })             
-          });          
+                }
+              })
+          });
       }
 
       function _updateUser(e){
