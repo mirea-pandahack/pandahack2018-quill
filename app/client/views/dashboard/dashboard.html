@@ -91,7 +91,7 @@
 
           <div class="ui purple button"
                ui-sref="app.application">
-            Заполните вашу заявку
+            Заполнить заявку
           </div>
 
         </div>
@@ -109,21 +109,21 @@
           </p>
           <div class="ui purple button"
                ui-sref="app.application">
-            Редактировать вашу заявку
+            Редактировать заявку
           </div>
 
           <div
             class="ui pink button"
             ng-show="!user.teamCode"
             ui-sref="app.team">
-            Создать или присоединиться к команде
+            Создать команду или присоединиться к существующей
           </div>
 
           <div
             class="ui pink button"
             ng-show="user.teamCode"
             ui-sref="app.team">
-            Просмотреть команду
+            Моя команда
           </div>
 
         </div>
@@ -158,7 +158,7 @@
             class="ui pink button"
             ng-show="user.teamCode"
             ui-sref="app.team">
-            Показать команду
+            Моя команда
           </div>
         </div>
 
@@ -185,7 +185,7 @@
 
           <div class="ui purple button"
                ui-sref="app.confirmation">
-            Confirm your spot
+            Подтвердить участие
           </div>
 
           <div class="ui red button"
@@ -230,7 +230,7 @@
 
           <div class="ui purple button"
                ui-sref="app.confirmation">
-            {{pastConfirmation ? 'Показать' : 'Редактировать'}} информацию вашей заявки
+            {{pastConfirmation ? 'Показать' : 'Редактировать'}} заявку
           </div>
 
           <div class="ui red button"
