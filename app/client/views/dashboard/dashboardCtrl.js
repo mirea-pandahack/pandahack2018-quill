@@ -73,7 +73,10 @@ angular.module('reg')
                         user.statusRu = 'Заявка подтверждена';
                         return user.status.admitted && user.status.confirmed && !user.status.declined;
                     case 'declined':
-                        user.statusRu = 'Заявка отклонена';
+                        user.statusRu = 'Заявка не заполнена'; /*
+                        @TODO: check WTF, register -> your status declined 0o
+                        but console.log(user.status.name); return incomplete
+                        */
                         return user.status.declined;
                 }
                 return false;
