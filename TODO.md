@@ -86,7 +86,14 @@ To customize the verification and confirmation emails for your event, put your n
 
 
 Make PR:
-* add telegram
-* add i18n
+* add telegram link
+    * also social links are optional
+* add i18n and customization module for all text
 * fix https://github.com/techx/quill/issues/57
 * update readme with(nginx config, SMTP settings and so on)
+* allow users with any email in admin panel
+* update deps(jwttoken and etc)
+* Enable user deletion from admin panel
+* enable disable user ;check in' in admin panel
+* guide how to add custom fields in application form
+* guide for user statuses
