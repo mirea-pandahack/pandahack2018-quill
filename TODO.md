@@ -86,6 +86,8 @@ To customize the verification and confirmation emails for your event, put your n
 
 
 Make PR:
+* fix styles for logo in sidebar
+* add .env backup for npm config script
 * add telegram link
     * also social links are optional
 * add i18n and customization module for all text
@@ -97,3 +99,6 @@ Make PR:
 * enable disable user ;check in' in admin panel
 * guide how to add custom fields in application form
 * guide for user statuses
+* how to run in offline mode(nohup etc)
+    * gulp server > server-logs & 
+    
