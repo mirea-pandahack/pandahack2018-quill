@@ -34,46 +34,62 @@ angular.module('reg')
             // Is it past the user's confirmation time?
             var pastConfirmation = $scope.pastConfirmation = Utils.isAfter(user.status.confirmBy);
 
-            //var userstatusRu = 'Тут будет Ваш статус';
-
             $scope.dashState = function (status) {
                 var user = $scope.user;
-                console.log(user.status.name);
-                console.log(user.status);
+
+                switch (user.status.name){
+                    case 'unverified':
+                        user.statusRu = 'Не подтверждён EMAIL';
+                        break;
+                    case 'incomplete':
+                        user.statusRu = 'Не заполнена заявка';
+                        break;
+                    case 'submitted':
+                        user.statusRu = 'Заявка отправлена';
+                        break;
+                    case 'admitted':
+                        user.statusRu = 'TODO: перевести admitted';
+                        break;
+                    case 'confirmed':
+                        user.statusRu = 'TODO: перевести confirmed';
+                        break;
+                    case 'declined':
+                        user.statusRu = 'Заявка отклонена';
+                        break;
+                    case 'checked in':
+                        user.statusRu = 'TODO: перевести checked in';
+                        break;
+                    default:
+                        user.statusRu = 'Тут будет Ваш статус';
+                        break;
+                }
+
 
                 switch (status) {
                     case 'unverified':
-                        user.statusRu = 'Не подтверждён EMAIL';
                         return !user.verified;
                     case 'openAndIncomplete':
-                        user.statusRu = 'Не заполнена заявка';
                         return regIsOpen && user.verified && !user.status.completedProfile;
                     case 'openAndSubmitted':
-                        user.statusRu = 'Заявка отправлена';
                         return regIsOpen && user.status.completedProfile && !user.status.admitted;
                     case 'closedAndIncomplete':
-                        user.statusRu = 'closedAndIncomplete';
                         return !regIsOpen && !user.status.completedProfile && !user.status.admitted;
                     case 'closedAndSubmitted': // Waitlisted State
-                        user.statusRu = 'closedAndSubmitted';
                         return !regIsOpen && user.status.completedProfile && !user.status.admitted;
                     case 'admittedAndCanConfirm':
-                        user.statusRu = 'admittedAndCanConfirm';
                         return !pastConfirmation &&
                             user.status.admitted &&
                             !user.status.confirmed &&
                             !user.status.declined;
                     case 'admittedAndCannotConfirm':
-                        user.statusRu = 'admittedAndCannotConfirm';
                         return pastConfirmation &&
                             user.status.admitted &&
                             !user.status.confirmed &&
                             !user.status.declined;
                     case 'confirmed':
-                        user.statusRu = 'Заявка подтверждена';
                         return user.status.admitted && user.status.confirmed && !user.status.declined;
                     case 'declined':
-                        user.statusRu = 'Заявка не заполнена'; /*
+                        /*
                         @TODO: check WTF, register -> your status declined 0o
                         but console.log(user.status.name); return incomplete
                         */
