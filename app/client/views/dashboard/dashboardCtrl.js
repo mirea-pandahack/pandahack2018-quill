@@ -48,7 +48,7 @@ angular.module('reg')
                         user.statusRu = 'Заявка отправлена';
                         break;
                     case 'admitted':
-                        user.statusRu = 'TODO: перевести admitted';
+                        user.statusRu = 'Заявка одобрена';
                         break;
                     case 'confirmed':
                         user.statusRu = 'TODO: перевести confirmed';
@@ -57,7 +57,7 @@ angular.module('reg')
                         user.statusRu = 'Заявка отклонена';
                         break;
                     case 'checked in':
-                        user.statusRu = 'TODO: перевести checked in';
+                        user.statusRu = 'Вы подтвердили участие';
                         break;
                     default:
                         user.statusRu = 'Тут будет Ваш статус';
