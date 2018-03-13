@@ -39,6 +39,7 @@ angular.module('reg')
             $scope.dashState = function (status) {
                 var user = $scope.user;
                 console.log(user.status.name);
+                console.log(user.status);
 
                 switch (status) {
                     case 'unverified':
