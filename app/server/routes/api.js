@@ -20,6 +20,8 @@ module.exports = function(router) {
     UserController.getByToken(token, function(err, user){
 
       if (err) {
+          console.log('Magic 1');
+          console.log(err);
         return res.status(500).send(err);
       }
 
@@ -51,6 +53,8 @@ module.exports = function(router) {
     UserController.getByToken(token, function(err, user){
 
       if (err || !user) {
+          console.log(err);
+          console.log('Magic 2');
         return res.status(500).send(err);
       }
 
