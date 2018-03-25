@@ -141,7 +141,7 @@ UserController.createUser = function(email, password, callback) {
 
   if (typeof email !== "string"){
     return callback({
-      message: "Email должен быть строкой."
+      message: "Email не должен быть пустым."
     });
   }
 
