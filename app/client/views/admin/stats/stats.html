@@ -219,7 +219,7 @@
 
       <tr
           class="item"
-          ng-repeat="school in stats.schoolsStats">
+          ng-repeat="school in stats.schoolsStats | orderBy: 'count'">
         <td>{{school.name}}</td>
         <td>{{school.count}}</td>
       </tr>
