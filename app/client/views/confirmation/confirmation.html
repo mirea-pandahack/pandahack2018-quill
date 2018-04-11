@@ -16,6 +16,8 @@
             <label> Мобильный телефон (обязательно) </label>
             <input type="tel"
                    name="phone"
+                   mask="9-999-999-99-99"
+                   clean="true"
                    ng-model="user.confirmation.phoneNumber"
                    placeholder="+7-900-100-20-18"
                    required>
@@ -49,10 +51,10 @@
           <div class="divided title">Твой челлендж</div>
 
           <div class="field">
-            <label>В каком челлендже будет участвовать твоя команда?</label>
+            <label>В каком челлендже будет участвовать твоя команда? (обязательно)</label>
             <p>
               Если вы ещё не определились, то вариант "Я ещё не выбрал" для вас.
-              <br><b>НО!</b> в таком случае - мы не сможем предоставить Вам комплект оборудования(VR/AR/IoT)
+              <br><b>НО!</b> в таком случае - мы не сможем предоставить вашей команде комплект оборудования(VR/AR/IoT)
               <br>
             </p>
             <select
@@ -130,7 +132,7 @@
           <div class="divided title">Внимание!</div>
 
           <div class="ui checkbox">
-            <input type="checkbox" id="passport" ng-model="user.profile.adult">
+            <input type="checkbox" id="passport" ng-model="user.profile.passport">
             <label for="passport">Я понимаю, что если у меня не будет документа удостоверяющего личность - я не смогу попасть на хакатон.</label>
           </div>
 
@@ -138,7 +140,7 @@
           <br>
 
           <div class="ui checkbox">
-            <input type="checkbox" id="personalFz" ng-model="user.profile.adult">
+            <input type="checkbox" id="personalFz" ng-model="user.profile.personalFz">
             <label for="personalFz">Я согласен на обработку моих персональных данных согласно ФЗ №152.</label>
           </div>
 
