@@ -120,12 +120,12 @@ angular.module('reg')
             $scope.declineAdmission = function () {
 
                 swal({
-                    title: "Whoa!",
-                    text: "Are you sure you would like to decline your admission? \n\n You can't go back!",
+                    title: "Воу!",
+                    text: "Ты уверен, что не сможешь прийти на PandaHack 2018? \n\n Это действие нельзя отменить :с",
                     type: "warning",
                     showCancelButton: true,
                     confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes, I can't make it.",
+                    confirmButtonText: "Увы, я уверен",
                     closeOnConfirm: true
                 }, function () {
 
