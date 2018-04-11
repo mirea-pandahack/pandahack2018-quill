@@ -58,8 +58,8 @@ angular.module('reg')
           .updateConfirmation(user._id, confirmation)
           .success(function(data){
             sweetAlert({
-              title: "Вау!",
-              text: "Вы приняты!",
+              title: "Еееее!",
+              text: "До встречи!",
               type: "success",
               confirmButtonColor: "#e76482"
             }, function(){
