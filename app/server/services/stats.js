@@ -110,7 +110,7 @@ function calculateStats(){
         }
 
         for(let taskSum in newStats.statChoosenTask) {
-          newStats.statChoosenTaskSum += taskSum;
+          newStats.statChoosenTaskSum += newStats.statChoosenTask[taskSum];
         }
 
         // Count people to call
