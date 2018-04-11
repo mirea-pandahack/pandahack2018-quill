@@ -54,8 +54,6 @@ angular.module('reg')
         });
         confirmation.dietaryRestrictions = drs;
 
-        console.log('need to call' + confirmation.needToCall);
-
         UserService
           .updateConfirmation(user._id, confirmation)
           .success(function(data){
