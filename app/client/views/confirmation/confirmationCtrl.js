@@ -1,4 +1,3 @@
-angular.module('reg', ['ngMask']);
 angular.module('reg')
   .controller('ConfirmationCtrl', [
     '$scope',
