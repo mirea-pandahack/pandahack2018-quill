@@ -237,7 +237,7 @@ angular.module('reg')
           name: 'Confirmation',
           fields: [{
             name: 'Phone Number',
-            value: user.confirmation.phoneNumber
+            value: user.confirmation.phone
           }, {
             name: 'Dietary Restrictions',
             value: user.confirmation.dietaryRestrictions.join(', ')

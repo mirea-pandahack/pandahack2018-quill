@@ -56,7 +56,7 @@ var profile = {
 
 // Only after confirmed
 var confirmation = {
-  phoneNumber: {
+  phone: {
     type: String,
     required: true,
     min: 1,
