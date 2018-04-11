@@ -56,10 +56,16 @@ var profile = {
 
 // Only after confirmed
 var confirmation = {
-  phoneNumber: String,
+  phoneNumber: {
+    type: String,
+    required: true,
+    min: 1,
+    max: 12,
+  },
   needToCall: Boolean,
   needToCall_time: String,
   choosenTask:{
+    required: true,
     type: String,
     enum: {
       values: [
@@ -79,8 +85,16 @@ var confirmation = {
   twitter: String, //telegram
   website: String, //VK
   github: String,
-  passport: Boolean,
-  personalFz: Boolean,
+  passport: {
+    type: Boolean,
+    required: true,
+    default: false
+  },
+  personalFz: {
+    type: Boolean,
+    required: true,
+    default: false
+  },
   notes: String,
 };
 
