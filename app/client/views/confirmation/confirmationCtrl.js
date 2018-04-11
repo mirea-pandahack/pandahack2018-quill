@@ -74,6 +74,7 @@ angular.module('reg')
       function _setupForm(){
         // Semantic-UI form validation
         $('.ui.form').form({
+          inline: true,
           fields: {
             choosenTask: {
               identifier: 'choosenTask',
