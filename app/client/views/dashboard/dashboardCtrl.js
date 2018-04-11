@@ -47,11 +47,11 @@ angular.module('reg')
                     case 'submitted':
                         user.statusRu = 'Заявка отправлена';
                         break;
-                    case 'admitted':
-                        user.statusRu = 'Заявка одобрена';
+                  case 'admitted':
+                        user.statusRu = 'Мы ждём тебя!'; //Заявка одобрена
                         break;
                     case 'confirmed':
-                        user.statusRu = 'TODO: перевести confirmed';
+                        user.statusRu = 'Ура! Скоро увидимся'; //'confirmed';
                         break;
                     case 'declined':
                         user.statusRu = 'Заявка отклонена';
