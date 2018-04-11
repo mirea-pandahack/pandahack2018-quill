@@ -22,6 +22,7 @@
     "angular": "~1.4.1",
     "angular-ui-router": "~0.2.15",
     "angular-animate": "~1.4.1",
+    "angular-mask": "*",
     "sweetalert": "~1.0.1",
     "moment": "~2.10.3",
     "showdown": "~1.2.1"
