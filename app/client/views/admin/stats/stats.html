@@ -201,32 +201,40 @@
   </div>
 
   <!--По универам-->
-  <div
-      class="ui pink segment"
-      ng-class="{'loading': loading}">
-    <div class="ui header">
+  <div class="ui accordion">
+    <div class="title">
+      <i class="dropdown icon"></i>
       Универы
     </div>
+    <div class="content">
+      <div
+          class="ui pink segment"
+          ng-class="{'loading': loading}">
+        <div class="ui header">
+          Универы
+        </div>
 
-    <table class="ui single line table">
-      <thead>
-      <tr>
-        <th>Универ</th>
-        <th>Сколько</th>
-      </tr>
-      </thead>
-      <tbody>
+        <table class="ui single line table">
+          <thead>
+          <tr>
+            <th>Универ</th>
+            <th>Сколько</th>
+          </tr>
+          </thead>
+          <tbody>
 
-      <tr
-          class="item"
-          ng-repeat="school in stats.schoolsStats | orderBy: 'count'">
-        <td>{{school.name}}</td>
-        <td>{{school.count}}</td>
-      </tr>
+          <tr
+              class="item"
+              ng-repeat="school in stats.schoolsStats | orderBy: 'count'">
+            <td>{{school.name}}</td>
+            <td>{{school.count}}</td>
+          </tr>
 
-      </tbody>
-    </table>
-    <div class="ui divider"></div>
+          </tbody>
+        </table>
+        <div class="ui divider"></div>
+      </div>
+    </div>
   </div>
 
   <!--Обзвон-->
