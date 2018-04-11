@@ -152,7 +152,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'allowMinors',
-                  prompt: 'Вы точно согласны?.'
+                  prompt: 'Вы точно согласны?'
                 }
               ]
             }
