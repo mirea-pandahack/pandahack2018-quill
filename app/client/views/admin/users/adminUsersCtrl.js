@@ -238,25 +238,6 @@ angular.module('reg')
           fields: [{
             name: 'Phone Number',
             value: user.confirmation.phone
-          }, {
-            name: 'Dietary Restrictions',
-            value: user.confirmation.dietaryRestrictions.join(', ')
-          }, {
-            name: 'Shirt Size',
-            value: user.confirmation.shirtSize
-          }]
-        }, {
-          name: 'Travel',
-          fields: [{
-            name: 'Needs Reimbursement',
-            value: user.confirmation.needsReimbursement,
-            type: 'boolean'
-          }, {
-            name: 'Received Reimbursement',
-            value: user.confirmation.needsReimbursement && user.status.reimbursementGiven
-          }, {
-            name: 'Additional Notes',
-            value: user.confirmation.notes
           }]
         }];
       }
