@@ -125,7 +125,7 @@ controller.sendInvitationEmail = function (email, callback) {
 
   var options = {
     to: email,
-    subject: "[" + HACKATHON_NAME + "] -  Congrats! You are selected for Hack.Moscow 2018!"
+    subject: "[" + HACKATHON_NAME + "] -  Мы ждём тебя на PandaHack 2018!"
   };
 
   /**
@@ -135,12 +135,12 @@ controller.sendInvitationEmail = function (email, callback) {
    * }
    */
   var locals = {
-    title: 'You have been accepted to Hack.Moscow 2018!',
+    title: 'Ура! Мы ждём тебя на PandaHack 2018!',
     subtitle: '',
-    description: 'You have been accepted to Hack.Moscow 2018! One last important thing to remember: confirm your spot by filling in the confirmation form at your Hack.Moscow Dashboard.' +
-    " In case something else has come along and you won't be able to come, please cancel your spot so another applicant is able to join Hack.Moscow 2018.",
-    actionUrl: 'http://registration.hack.moscow',
-    actionName: "Confirm your attendance"
+    description: 'Мы с нетерпением ждём твоего участия в PandaHack 2018 15 апреля!' +
+    'Пожалуйста, перейди по ссылке и подтверди своё участие, ответив на несколько простых вопросов(выбранное направление, пропуск для авто и т.д.).',
+    actionUrl: 'https://pandahack.mirea.top/confirmation',
+    actionName: "Подтвердить участие"
   };
   sendOne('email-link-action', options, locals, function (err, info) {
     if (err) {
