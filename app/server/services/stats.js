@@ -86,8 +86,9 @@ function calculateStats(){
       "Sibintek": 0,
       "Galaktika": 0,
       "Codabra": 0,
-      "No": 0
+      "No": 0,
     },
+    statChoosenTaskSum: 0,
     statNeedToCall: 0,
 
   };
@@ -106,6 +107,10 @@ function calculateStats(){
         // Count people for each task
         if (user.confirmation.choosenTask in newStats.statChoosenTask){
           newStats.statChoosenTask[user.confirmation.choosenTask] += 1;
+        }
+
+        for(let taskSum in newStats.statChoosenTask) {
+          newStats.statChoosenTaskSum += taskSum;
         }
 
         // Count people to call
@@ -235,16 +240,16 @@ function calculateStats(){
           });
         newStats.demo.schools = schools;
 
-        // Likewise, transform the teams into an array of objects
-        // var teams = [];
-        // _.keys(newStats.teams)
-        //   .forEach(function(key){
-        //     teams.push({
-        //       name: key,
-        //       users: newStats.teams[key]
-        //     });
-        //   });
-        // newStats.teams = teams;
+        Likewise, transform the teams into an array of objects
+        var teams = [];
+        _.keys(newStats.teams)
+          .forEach(function(key){
+            teams.push({
+              name: key,
+              users: newStats.teams[key]
+            });
+          });
+        newStats.teams = teams;
 
         console.log('Stats updated!');
         newStats.lastUpdated = new Date();
