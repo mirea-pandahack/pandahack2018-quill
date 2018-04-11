@@ -75,12 +75,12 @@ angular.module('reg')
         // Semantic-UI form validation
         $('.ui.form').form({
           fields: {
-            shirt: {
-              identifier: 'shirt',
+            choosenTask: {
+              identifier: 'choosenTask',
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Размер футболки!'
+                  prompt: 'Выбранный челлендж'
                 }
               ]
             },
@@ -93,33 +93,24 @@ angular.module('reg')
                 }
               ]
             },
-            signatureLiability: {
-              identifier: 'signatureLiabilityWaiver',
+            passport: {
+              identifier: 'passport',
               rules: [
                 {
-                  type: 'empty',
-                  prompt: 'Я согласен.'
+                  type: 'checked',
+                  prompt: 'Вы точно возьмёте с собой паспорт?'
                 }
               ]
             },
-            signaturePhotoRelease: {
-              identifier: 'signaturePhotoRelease',
+            personalFz: {
+              identifier: 'personalFz',
               rules: [
                 {
-                  type: 'empty',
-                  prompt: 'Я согласен.'
+                  type: 'checked',
+                  prompt: 'Вы точно согласны?'
                 }
               ]
-            },
-            signatureCodeOfConduct: {
-              identifier: 'signatureCodeOfConduct',
-              rules: [
-                {
-                  type: 'empty',
-                  prompt: 'Я согласен.'
-                }
-              ]
-            },
+            }
           }
         });
       }

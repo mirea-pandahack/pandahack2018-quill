@@ -57,46 +57,32 @@ var profile = {
 // Only after confirmed
 var confirmation = {
   phoneNumber: String,
-  dietaryRestrictions: [String],
-  shirtSize: {
+  needToCall: Boolean,
+  needToCall_time: String,
+  choosenTask:{
     type: String,
     enum: {
-      values: 'XS S M L XL XXL WXS WS WM WL WXL WXXL'.split(' ')
+      values: [
+        //@TODO: править челленджи здесь задания challenge
+        "Virtual Reality",
+        "Augmented Reality",
+        "Samsung IoT",
+        "Aquarius",
+        "Foresight",
+        "Сибинтек",
+        "Я ещё не выбрал[мы не сможем предоставить Вам комплект оборудования]"
+      ]
     }
   },
-  wantsHardware: Boolean,
-  hardware: String,
-
-  major: String,
+  autoNum: String,
+  autoModel: String,
+  hackNews: Boolean,
+  twitter: String, //telegram
+  website: String, //VK
+  passport: Boolean,
+  personalFz: Boolean,
   github: String,
-  twitter: String,
-  website: String,
-  resume: String,
-
-  needsReimbursement: Boolean,
-  address: {
-    name: String,
-    line1: String,
-    line2: String,
-    city: String,
-    state: String,
-    zip: String,
-    country: String
-  },
-  receipt: String,
-
-  hostNeededFri: Boolean,
-  hostNeededSat: Boolean,
-  genderNeutral: Boolean,
-  catFriendly: Boolean,
-  smokingFriendly: Boolean,
-  hostNotes: String,
-
   notes: String,
-
-  signatureLiability: String,
-  signaturePhotoRelease: String,
-  signatureCodeOfConduct: String,
 };
 
 var status = {
