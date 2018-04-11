@@ -76,12 +76,11 @@ var confirmation = {
   },
   autoNum: String,
   autoModel: String,
-  hackNews: Boolean,
   twitter: String, //telegram
   website: String, //VK
+  github: String,
   passport: Boolean,
   personalFz: Boolean,
-  github: String,
   notes: String,
 };
 
