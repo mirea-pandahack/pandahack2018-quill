@@ -148,12 +148,12 @@ function calculateStats(){
         }
 
         // Grab the team name if there is one
-        // if (user.teamCode && user.teamCode.length > 0){
-        //   if (!newStats.teams[user.teamCode]){
-        //     newStats.teams[user.teamCode] = [];
-        //   }
-        //   newStats.teams[user.teamCode].push(user.profile.name);
-        // }
+        if (user.teamCode && user.teamCode.length > 0){
+          if (!newStats.teams[user.teamCode]){
+            newStats.teams[user.teamCode] = [];
+          }
+          newStats.teams[user.teamCode].push(user.profile.name);
+        }
 
         // Count shirt sizes
         if (user.confirmation.shirtSize in newStats.shirtSizes){
