@@ -4,11 +4,7 @@ angular.module('reg')
     'UserService',
     function ($scope, UserService) {
 
-      $('.ui.accordion')
-        .accordion();
-
-
-      function saveThisTable(el) {
+      $scope.saveThisTable = saveThisTable(el) {
         var fileText = "";
         var fileTitle = el.previousElementSibling.textContent;
         var tableBody = el.nextElementSibling.querySelectorAll('tbody')[0];
@@ -38,6 +34,9 @@ angular.module('reg')
         anchor.dataset.downloadurl = ['text/plain', anchor.download, anchor.href].join(':');
         anchor.click();
       }
+
+      $('.ui.accordion')
+        .accordion();
 
       UserService
         .getStats()
