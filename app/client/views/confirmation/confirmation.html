@@ -21,6 +21,9 @@
                    required>
           </div>
 
+          <br>
+          <br>
+
           <div class="field">
             <label> Нужно ли позвонить тебе утром перед мероприятием и разбудить? </label>
             <div class="ui checkbox">
@@ -28,6 +31,9 @@
               <label> Да, буду благодарен </label>
             </div>
           </div>
+
+          <br>
+          <br>
 
           <div class="field">
             <label> Если да, то во сколько? </label>
@@ -37,11 +43,17 @@
                    ng-model="user.confirmation.needToCall_time">
           </div>
 
+          <br>
+          <br>
+
+          <div class="divided title">Твой челлендж</div>
+
           <div class="field">
-            <label>В каком челлендже Вы будете участвовать</label>
+            <label>В каком челлендже будет участвовать твоя команда?</label>
             <p>
-              Если Вы ещё не определились, то вариант "Я ещё не выбрал" для Вас.
+              Если вы ещё не определились, то вариант "Я ещё не выбрал" для вас.
               <br><b>НО!</b> в таком случае - мы не сможем предоставить Вам комплект оборудования(VR/AR/IoT)
+              <br>
             </p>
             <select
                 name="choosenTask"
@@ -59,9 +71,13 @@
             </select>
           </div>
 
-          <div class="divided title">Хочешь узнавать о новых интересных хакатонах? </div>
+          <br>
+          <br>
+
+          <div class="divided title">Обмен контактами</div>
           <p>
-            Оставь нам свои контакты
+            Хочешь узнавать о новых интересных хакатонах?<br>
+            Если да, то оставь нам свои контакты
           </p>
           <div class="field">
             <label> Telegram </label>
@@ -87,6 +103,9 @@
                    ng-model="user.confirmation.github">
           </div>
 
+          <br>
+          <br>
+
           <div class="divided title">Пропуск для авто на парковку</div>
 
           <div class="field">
@@ -105,6 +124,9 @@
                    ng-model="user.confirmation.autoModel">
           </div>
 
+          <br>
+          <br>
+
           <div class="divided title">Внимание!</div>
 
           <div class="ui checkbox">
@@ -112,10 +134,16 @@
             <label for="passport">Я понимаю, что если у меня не будет документа удостоверяющего личность - я не смогу попасть на хакатон.</label>
           </div>
 
+          <br>
+          <br>
+
           <div class="ui checkbox">
             <input type="checkbox" id="personalFz" ng-model="user.profile.adult">
             <label for="personalFz">Я согласен на обработку моих персональных данных согласно ФЗ №152.</label>
           </div>
+
+          <br>
+          <br>
 
           <!--<div class="divided title">Замечания/Пожелания</div>-->
 
