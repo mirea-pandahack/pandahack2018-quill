@@ -91,7 +91,7 @@ function calculateStats() {
     },
     statChoosenTaskSum: 0,
     statNeedToCall: 0,
-    needToCallUsers: {}
+    needToCallUsers: []
 
   };
 
