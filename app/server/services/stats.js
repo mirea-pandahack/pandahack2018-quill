@@ -94,6 +94,8 @@ function calculateStats() {
     needToCallUsers: [],
     usersNotes: [],
     schoolsStats: {},
+    needParking: [],
+    totalTeams: 0,
 
   };
 
@@ -126,6 +128,17 @@ function calculateStats() {
             phone: user.confirmation.phone,
             ntime: user.confirmation.needToCall_time
           });
+        }
+
+        //Count people with cars
+        if(user.confirmation.autoNum && user.confirmation.autoModel){
+          if(user.confirmation.autoNum.length > 6 && user.confirmation.autoModel.length > 1){
+            newStats.needParking.push({
+              name: user.profile.name,
+              autoNum: user.confirmation.autoNum,
+              autoModel: user.confirmation.autoModel
+            });
+          }
         }
 
         //User notes
@@ -239,6 +252,10 @@ function calculateStats() {
           }
           newStats.teams[user.teamCode].push(user.profile.name);
         }
+
+        // Count total teams
+        newStats.totalTeams = Object.keys(newStats.teams).length;
+
 
         // Count shirt sizes
         if (user.confirmation.shirtSize in newStats.shirtSizes) {
