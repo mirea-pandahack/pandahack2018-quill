@@ -14,7 +14,7 @@ angular.module('reg')
 
       $scope.user = currentUser.data;
 
-      $scope.TEAM = TEAM.toUpperCase();
+      $scope.TEAM = TEAM;
 
       function _populateTeammates() {
         UserService
