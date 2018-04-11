@@ -116,7 +116,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Введите Ваше ФИО.'
+                  prompt: 'Введите Ваше ФИО'
                 }
               ]
             },
@@ -125,7 +125,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Название Института/Университета/Школы.'
+                  prompt: 'Название Института/Университета/Школы'
                 }
               ]
             },
@@ -134,7 +134,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Выберите год выпуска.'
+                  prompt: 'Выберите год выпуска'
                 }
               ]
             },
@@ -143,7 +143,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Ваш пол.'
+                  prompt: 'Ваш пол'
                 }
               ]
             },
