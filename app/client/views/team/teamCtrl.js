@@ -31,7 +31,7 @@ angular.module('reg')
 
       $scope.joinTeam = function(){
         UserService
-          .joinOrCreateTeam($scope.code)
+          .joinOrCreateTeam($scope.code.toUpperCase())
           .success(function(user){
             $scope.error = null;
             $scope.user = user;
