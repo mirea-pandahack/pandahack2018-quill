@@ -75,7 +75,21 @@ function calculateStats(){
 
     wantsHardware: 0,
 
-    checkedIn: 0
+    checkedIn: 0,
+
+    statChoosenTask: {
+      "Virtual Reality": 0,
+      "Leap Motion": 0,
+      "Samsung IoT": 0,
+      "Aquarius": 0,
+      "Foresight": 0,
+      "Sibintek": 0,
+      "Galaktika": 0,
+      "Codabra": 0,
+      "No": 0
+    },
+    statNeedToCall: 0,
+
   };
 
   User
@@ -88,6 +102,15 @@ function calculateStats(){
       newStats.total = users.length;
 
       async.each(users, function(user, callback){
+
+        // Count people for each task
+        if (user.confirmation.choosenTask in newStats.statChoosenTask){
+          newStats.statChoosenTask[user.confirmation.choosenTask] += 1;
+        }
+
+        // Count people to call
+        newStats.statNeedToCall += user.confirmation.needToCall ? 1 : 0;
+
 
         // Grab the email extension
         var email = user.email.split('@')[1];
