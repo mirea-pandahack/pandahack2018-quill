@@ -1,8 +1,6 @@
 var UserController = require('../controllers/UserController');
 var SettingsController = require('../controllers/SettingsController');
 
-var Stats = require('../services/stats');
-
 var request = require('request');
 
 module.exports = function(router) {
@@ -148,11 +146,8 @@ module.exports = function(router) {
     UserController.getStats(defaultResponse(req, res));
   });
 
-  router.get('/countStats', isAdmin, function(req, res){
-    console.log('Hi, it works? :c')
-    Stats.calculateStats();
-
-    UserController.getStats(defaultResponse(req, res));
+  router.get('/fullStats', isAdmin, function(req, res){
+    UserController.getFullStats(defaultResponse(req, res));
   });
 
   /**

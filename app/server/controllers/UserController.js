@@ -724,4 +724,8 @@ UserController.getStats = function (callback) {
   return callback(null, Stats.getUserStats());
 };
 
+UserController.getFullStats = function (callback) {
+  return callback(null, Stats.calculateStats());
+};
+
 module.exports = UserController;
