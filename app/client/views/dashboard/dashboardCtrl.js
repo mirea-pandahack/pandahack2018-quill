@@ -124,6 +124,7 @@ angular.module('reg')
                     text: "Ты уверен, что не сможешь прийти на PandaHack 2018? \n\n Это действие нельзя отменить :с",
                     type: "warning",
                     showCancelButton: true,
+                    cancelButtonText: "Я ещё подумаю",
                     confirmButtonColor: "#DD6B55",
                     confirmButtonText: "Увы, я уверен",
                     closeOnConfirm: true
