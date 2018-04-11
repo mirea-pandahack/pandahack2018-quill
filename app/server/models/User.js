@@ -58,14 +58,12 @@ var profile = {
 var confirmation = {
   phone: {
     type: String,
-    required: true,
     min: 1,
     max: 12,
   },
   needToCall: Boolean,
   needToCall_time: String,
   choosenTask:{
-    required: true,
     type: String,
     enum: {
       values: [
@@ -87,12 +85,10 @@ var confirmation = {
   github: String,
   passport: {
     type: Boolean,
-    required: true,
     default: false
   },
   personalFz: {
     type: Boolean,
-    required: true,
     default: false
   },
   notes: String,
