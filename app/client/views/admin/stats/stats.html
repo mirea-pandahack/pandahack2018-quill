@@ -1,5 +1,6 @@
 <div id="stats">
 
+  <!--общая статистика-->
   <div
       class="ui green segment"
       ng-class="{'loading': loading}">
@@ -95,6 +96,17 @@
 
         <div class="ui divider"></div>
 
+        <div
+            class="item">
+          <i class="green circle check icon"></i>
+          <div class="content">
+            <strong>
+              Всего команд
+            </strong> :
+            {{stats.totalTeams}}
+          </div>
+        </div>
+
         <!--<div class="item">-->
         <!--<i class="child icon"></i>-->
         <!--<div class="content">-->
@@ -126,6 +138,38 @@
         <!--</div>-->
       </div>
     </div>
+  </div>
+
+  <!--Демография-->
+  <div
+      class="ui pink segment"
+      ng-class="{'loading': loading}">
+    <div class="ui header">
+      Demographics
+    </div>
+    <div class="ui list">
+      <div class="item">
+        <i class="users icon"></i>
+        <div class="content">
+          <strong>Total users</strong>: {{stats.total}}
+        </div>
+      </div>
+      <div class="item">
+        <i class="female icon"></i>
+        <div class="content">
+          <strong>Female</strong>: {{stats.demo.gender['F']}} ({{stats.demo.gender['F'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+      <div class="item">
+        <i class="male icon"></i>
+        <div class="content">
+          <strong>Male</strong>: {{stats.demo.gender['M']}} ({{stats.demo.gender['M'] / stats.total * 100 | number:1}}%)
+        </div>
+      </div>
+    </div>
+    <div class="ui divider"></div>
+
+
   </div>
 
   <!--Задания-->
@@ -323,6 +367,42 @@
     </div>
   </div>
 
+  <!--ФИО для пропуска-->
+  <div class="ui accordion">
+    <div class="title">
+      <i class="dropdown icon"></i>
+      ФИО для пропуска
+    </div>
+    <div class="content">
+      <div
+          class="ui pink segment"
+          ng-class="{'loading': loading}">
+        <div class="ui header">
+          ФИО для пропуска
+        </div>
+
+        <table class="ui single line table">
+          <thead>
+          <tr>
+            <th>Name</th>
+          </tr>
+          </thead>
+          <tbody>
+
+          <tr
+              class="item"
+              ng-repeat="user in stats.peopleWillBe">
+            <td>{{user}}</td>
+          </tr>
+
+          </tbody>
+        </table>
+        <div class="ui divider"></div>
+      </div>
+
+    </div>
+  </div>
+
   <!--ФИО и заметки-->
   <div class="ui accordion">
     <div class="title">
@@ -360,40 +440,7 @@
     </div>
   </div>
 
-  <!--Демография-->
-  <div
-      class="ui pink segment"
-      ng-class="{'loading': loading}">
-    <div class="ui header">
-      Demographics
-    </div>
-    <div class="ui list">
-      <div class="item">
-        <i class="users icon"></i>
-        <div class="content">
-          <strong>Total users</strong>: {{stats.total}}
-        </div>
-      </div>
-      <div class="item">
-        <i class="female icon"></i>
-        <div class="content">
-          <strong>Female</strong>: {{stats.demo.gender['F']}} ({{stats.demo.gender['F'] / stats.total * 100 | number:1}}%)
-        </div>
-      </div>
-      <div class="item">
-        <i class="male icon"></i>
-        <div class="content">
-          <strong>Male</strong>: {{stats.demo.gender['M']}} ({{stats.demo.gender['M'] / stats.total * 100 | number:1}}%)
-        </div>
-      </div>
-    </div>
-    <div class="ui divider"></div>
-
-
-  </div>
-
   <!--Имена команд-->
-
   <div class="ui accordion">
     <div class="title">
       <i class="dropdown icon"></i>

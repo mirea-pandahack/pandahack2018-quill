@@ -96,6 +96,7 @@ function calculateStats() {
     schoolsStats: {},
     needParking: [],
     totalTeams: 0,
+    peopleWillBe: []
 
   };
 
@@ -131,8 +132,8 @@ function calculateStats() {
         }
 
         //Count people with cars
-        if(user.confirmation.autoNum && user.confirmation.autoModel){
-          if(user.confirmation.autoNum.length > 6 && user.confirmation.autoModel.length > 1){
+        if (user.confirmation.autoNum && user.confirmation.autoModel) {
+          if (user.confirmation.autoNum.length > 6 && user.confirmation.autoModel.length > 1) {
             newStats.needParking.push({
               name: user.profile.name,
               autoNum: user.confirmation.autoNum,
@@ -169,7 +170,7 @@ function calculateStats() {
           let school = user.profile.school;
 
           //check if it is MIREA
-          if(isMirea(school)){
+          if (isMirea(school)) {
             school = 'МИРЭА';
           }
 
@@ -181,6 +182,12 @@ function calculateStats() {
           }
 
           newStats.schoolsStats[school].count++;
+        }
+
+
+        //people for enterance
+        if (user.profile.name) {
+          newStats.peopleWillBe.push(user.profile.name);
         }
 
 
