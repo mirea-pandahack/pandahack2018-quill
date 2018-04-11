@@ -151,6 +151,8 @@ module.exports = function(router) {
   router.get('/countStats', isAdmin, function(req, res){
     console.log('Hi, it works? :c')
     Stats.calculateStats();
+
+    UserController.getStats(defaultResponse(req, res));
   });
 
   /**
