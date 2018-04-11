@@ -4,6 +4,10 @@ angular.module('reg')
     'UserService',
     function($scope, UserService){
 
+      $('.ui.accordion')
+        .accordion()
+      ;
+
       UserService
         .getStats()
         .success(function(stats){
