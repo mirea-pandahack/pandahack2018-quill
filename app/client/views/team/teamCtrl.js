@@ -25,7 +25,7 @@ angular.module('reg')
           });
       }
 
-      if ($scope.user.teamCode.toUpperCase()){
+      if ($scope.user.teamCode){
         _populateTeammates();
       }
 
