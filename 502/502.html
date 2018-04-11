@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="reg">
+<head lang="ru">
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PandaHack 2018. Личный кабинет</title>
+    <style>
+        *{
+            position: relative;
+        }
+
+        body{
+            font-family: Roboto, Helvetica, Arial;
+        }
+
+        a{
+            color: black;
+        }
+
+        a:hover{
+            text-decoration: none;
+        }
+
+        .wrap{
+            text-align: center;
+        }
+
+        .logo{
+            max-width: 200px;
+        }
+
+        .logo:hover{
+            cursor: pointer;
+            -webkit-animation:spin 3s linear infinite;
+            -moz-animation:spin 3s linear infinite;
+            animation:spin 3s linear infinite;
+        }
+
+        .report{
+            margin-top: 20px;
+        }
+
+        @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+        @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+        @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h2>
+        Ой, похоже что-то сломалось. <br>Но мы быстро всё починим!
+    </h2>
+    <div>
+        <img class="logo" src="/502-pandahack2018-logo.png" alt="PandaHack 2018">
+    </div>
+    <div class="report">
+        Будем очень признательны, <br>если Вы сообщите нам об этом в чат: <br><a href="https://t.me/pandahackit">https://t.me/pandahackit</a>
+    </div>
+</div>
+</body>
+</html>
+
