@@ -69,11 +69,13 @@ var confirmation = {
       values: [
         //@TODO: править челленджи здесь задания challenge
         "Virtual Reality",
-        "Augmented Reality",
+        "Leap Motion",
         "Samsung IoT",
         "Aquarius",
         "Foresight",
         "Сибинтек",
+        "Галактика",
+        "Кодабра",
         "Я ещё не выбрал[мы не сможем предоставить Вам комплект оборудования]"
       ]
     }
