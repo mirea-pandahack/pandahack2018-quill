@@ -15,8 +15,4 @@ angular.module('reg')
         return moment(date).fromNow();
       };
 
-      $scope('.ui.accordion')
-        .accordion()
-      ;
-
     }]);
