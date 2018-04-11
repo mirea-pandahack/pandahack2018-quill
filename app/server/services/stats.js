@@ -322,6 +322,8 @@ setInterval(calculateStats, 300000);
 
 var Stats = {};
 
+Stats.calculateStats = calculateStats;
+
 Stats.getUserStats = function () {
   return stats;
 };

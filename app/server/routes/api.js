@@ -1,6 +1,8 @@
 var UserController = require('../controllers/UserController');
 var SettingsController = require('../controllers/SettingsController');
 
+var Stats = require('../services/stats');
+
 var request = require('request');
 
 module.exports = function(router) {
@@ -144,6 +146,10 @@ module.exports = function(router) {
    */
   router.get('/users/stats', isAdmin, function(req, res){
     UserController.getStats(defaultResponse(req, res));
+  });
+
+  router.get('/countStats', isAdmin, function(req, res){
+    Stats.calculateStats();
   });
 
   /**
