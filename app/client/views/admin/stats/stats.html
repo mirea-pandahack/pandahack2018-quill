@@ -96,33 +96,33 @@
         <div class="ui divider"></div>
 
         <!--<div class="item">-->
-          <!--<i class="child icon"></i>-->
-          <!--<div class="content">-->
-            <!--<strong>-->
-              <!--Unisex shirt sizes:-->
-            <!--</strong> :-->
-            <!--XS ({{stats.shirtSizes['XS']}})-->
-            <!--S ({{stats.shirtSizes['S']}})-->
-            <!--M ({{stats.shirtSizes['M']}})-->
-            <!--L ({{stats.shirtSizes['L']}})-->
-            <!--XL ({{stats.shirtSizes['XL']}})-->
-            <!--XXL ({{stats.shirtSizes['XXL']}})-->
-          <!--</div>-->
+        <!--<i class="child icon"></i>-->
+        <!--<div class="content">-->
+        <!--<strong>-->
+        <!--Unisex shirt sizes:-->
+        <!--</strong> :-->
+        <!--XS ({{stats.shirtSizes['XS']}})-->
+        <!--S ({{stats.shirtSizes['S']}})-->
+        <!--M ({{stats.shirtSizes['M']}})-->
+        <!--L ({{stats.shirtSizes['L']}})-->
+        <!--XL ({{stats.shirtSizes['XL']}})-->
+        <!--XXL ({{stats.shirtSizes['XXL']}})-->
+        <!--</div>-->
         <!--</div>-->
 
         <!--<div class="item">-->
-          <!--<i class="child icon"></i>-->
-          <!--<div class="content">-->
-            <!--<strong>-->
-              <!--Women's shirt sizes:-->
-            <!--</strong> :-->
-            <!--XS ({{stats.shirtSizes['WXS']}})-->
-            <!--S ({{stats.shirtSizes['WS']}})-->
-            <!--M ({{stats.shirtSizes['WM']}})-->
-            <!--L ({{stats.shirtSizes['WL']}})-->
-            <!--XL ({{stats.shirtSizes['WXL']}})-->
-            <!--XXL ({{stats.shirtSizes['WXXL']}})-->
-          <!--</div>-->
+        <!--<i class="child icon"></i>-->
+        <!--<div class="content">-->
+        <!--<strong>-->
+        <!--Women's shirt sizes:-->
+        <!--</strong> :-->
+        <!--XS ({{stats.shirtSizes['WXS']}})-->
+        <!--S ({{stats.shirtSizes['WS']}})-->
+        <!--M ({{stats.shirtSizes['WM']}})-->
+        <!--L ({{stats.shirtSizes['WL']}})-->
+        <!--XL ({{stats.shirtSizes['WXL']}})-->
+        <!--XXL ({{stats.shirtSizes['WXXL']}})-->
+        <!--</div>-->
         <!--</div>-->
       </div>
     </div>
@@ -198,12 +198,9 @@
 
     </div>
     <div class="ui divider"></div>
-
-
   </div>
 
   <!--Обзвон-->
-
   <div
       class="ui pink segment"
       ng-class="{'loading': loading}">
@@ -214,21 +211,32 @@
       <div class="item">
         <i class="users icon"></i>
         <div class="content">
-          <strong>Total users</strong>: {{stats.total}}
+          <strong>Total users to call</strong>: {{stats.statNeedToCall}}
         </div>
       </div>
-      <div class="item">
-        <i class="female icon"></i>
-        <div class="content">
-          <strong>Female</strong>: {{stats.demo.gender['F']}} ({{stats.demo.gender['F'] / stats.total * 100 | number:1}}%)
-        </div>
-      </div>
-      <div class="item">
-        <i class="male icon"></i>
-        <div class="content">
-          <strong>Male</strong>: {{stats.demo.gender['M']}} ({{stats.demo.gender['M'] / stats.total * 100 | number:1}}%)
-        </div>
-      </div>
+
+      <table class="ui single line table">
+        <thead>
+        <tr>
+          <th>Time</th>
+          <th>Name</th>
+          <th>Phone</th>
+        </tr>
+        </thead>
+        <tbody>
+
+        <tr
+            class="item"
+            ng-repeat="user in stats.needToCallUsers | orderBy: 'ntime'">
+          <td>{{user.ntime}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.phone}}</td>
+        </tr>
+
+        </tbody>
+      </table>
+
+
     </div>
     <div class="ui divider"></div>
 
@@ -339,19 +347,19 @@
   <div
       class="ui purple segment"
       ng-class="{'loading': loading}">
-      <div class="ui header">
-        Team Names
-      </div>
-      <div class="ui list">
-        <div
+    <div class="ui header">
+      Team Names
+    </div>
+    <div class="ui list">
+      <div
           class="item"
           ng-repeat="team in stats.teams | orderBy: 'name'">
-          <div class="header">
-            {{team.name}}
-          </div>
-          {{team.users.join(', ')}}
+        <div class="header">
+          {{team.name}}
         </div>
+        {{team.users.join(', ')}}
       </div>
     </div>
+  </div>
 
 </div>
