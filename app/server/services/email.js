@@ -154,84 +154,85 @@ controller.sendInvitationEmail = function (email, callback) {
     }
   });
 
+};
+/**
+ * Send a password recovery email.
+ * @param  {[type]}   email    [description]
+ * @param  {[type]}   token    [description]
+ * @param  {Function} callback [description]
+ */
+controller.sendPasswordResetEmail = function (email, token, callback) {
 
-  /**
-   * Send a password recovery email.
-   * @param  {[type]}   email    [description]
-   * @param  {[type]}   token    [description]
-   * @param  {Function} callback [description]
-   */
-  controller.sendPasswordResetEmail = function (email, token, callback) {
+  var options = {
+    to: email,
+    subject: "[" + HACKATHON_NAME + "] - Запрошен сброс пароля!"
+  };
 
-    var options = {
-      to: email,
-      subject: "[" + HACKATHON_NAME + "] - Запрошен сброс пароля!"
-    };
-
-    var locals = {
-      title: 'Запрошен сброс пароля',
-      subtitle: '',
-      description: 'Кто-то (надеемся, что Вы!) запросили сброс пароля. Если ' +
-      'это были не Вы, то спокойно удаляйте это письмо. Ссылка станет неактивной через час.',
-      actionUrl: ROOT_URL + '/reset/' + token,
-      actionName: "Сбросить пароль"
-    };
-
-    /**
-     * Eamil-verify takes a few template values:
-     * {
-   *   verifyUrl: the url that the user must visit to verify their account
-   * }
-     */
-    sendOne('email-link-action', options, locals, function (err, info) {
-      if (err) {
-        console.log(err);
-      }
-      if (info) {
-        console.log(info.message);
-      }
-      if (callback) {
-        callback(err, info);
-      }
-    });
-
+  var locals = {
+    title: 'Запрошен сброс пароля',
+    subtitle: '',
+    description: 'Кто-то (надеемся, что Вы!) запросили сброс пароля. Если ' +
+    'это были не Вы, то спокойно удаляйте это письмо. Ссылка станет неактивной через час.',
+    actionUrl: ROOT_URL + '/reset/' + token,
+    actionName: "Сбросить пароль"
   };
 
   /**
-   * Send a password recovery email.
-   * @param  {[type]}   email    [description]
-   * @param  {Function} callback [description]
-   */
-  controller.sendPasswordChangedEmail = function (email, callback) {
-
-    var options = {
-      to: email,
-      subject: "[" + HACKATHON_NAME + "] - Ваш пароль изменён!"
-    };
-
-    var locals = {
-      title: 'Ваш пароль изменён',
-      body: 'Кто-то (надеемся, что Вы!) успешно изменили пароль от учетной записи.',
-    };
-
-    /**
-     * Eamil-verify takes a few template values:
-     * {
+   * Eamil-verify takes a few template values:
+   * {
    *   verifyUrl: the url that the user must visit to verify their account
    * }
-     */
-    sendOne('email-basic', options, locals, function (err, info) {
-      if (err) {
-        console.log(err);
-      }
-      if (info) {
-        console.log(info.message);
-      }
-      if (callback) {
-        callback(err, info);
-      }
-    });
+   */
+  sendOne('email-link-action', options, locals, function (err, info) {
+    if (err) {
+      console.log(err);
+    }
+    if (info) {
+      console.log(info.message);
+    }
+    if (callback) {
+      callback(err, info);
+    }
+  });
 
+};
+
+/**
+ * Send a password recovery email.
+ * @param  {[type]}   email    [description]
+ * @param  {Function} callback [description]
+ */
+controller.sendPasswordChangedEmail = function (email, callback) {
+
+  var options = {
+    to: email,
+    subject: "[" + HACKATHON_NAME + "] - Ваш пароль изменён!"
   };
 
-  module.exports = controller;
+  var locals = {
+    title: 'Ваш пароль изменён',
+    body: 'Кто-то (надеемся, что Вы!) успешно изменили пароль от учетной записи.',
+  };
+
+  /**
+   * Eamil-verify takes a few template values:
+   * {
+   *   verifyUrl: the url that the user must visit to verify their account
+   * }
+   */
+  sendOne('email-basic', options, locals, function (err, info) {
+    if (err) {
+      console.log(err);
+    }
+    if (info) {
+      console.log(info.message);
+    }
+    if (callback) {
+      callback(err, info);
+    }
+  });
+
+};
+
+
+module.exports = controller;
