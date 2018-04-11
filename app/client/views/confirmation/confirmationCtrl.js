@@ -119,6 +119,9 @@ angular.module('reg')
         if ($('.ui.form').form('is valid')){
           _updateUser();
         }
+        else{
+          sweetAlert("О нет!", "Пожалуйста, заполните обязательные поля", "error");
+        }
       };
 
-    }]);
+}]);
