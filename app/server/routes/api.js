@@ -146,10 +146,6 @@ module.exports = function(router) {
     UserController.getStats(defaultResponse(req, res));
   });
 
-  router.get('/fullStats', isAdmin, function(req, res){
-    UserController.getFullStats(defaultResponse(req, res));
-  });
-
   /**
    * [OWNER/ADMIN]
    *
