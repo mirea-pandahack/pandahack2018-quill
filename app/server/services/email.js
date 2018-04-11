@@ -18,7 +18,7 @@ var EMAIL_PASS = process.env.EMAIL_PASS;
 var EMAIL_PORT = process.env.EMAIL_PORT;
 var EMAIL_CONTACT = process.env.EMAIL_CONTACT;
 var EMAIL_HEADER_IMAGE = process.env.EMAIL_HEADER_IMAGE;
-if(EMAIL_HEADER_IMAGE.indexOf("https") == -1){
+if (EMAIL_HEADER_IMAGE.indexOf("https") == -1) {
   EMAIL_HEADER_IMAGE = ROOT_URL + EMAIL_HEADER_IMAGE;
 }
 
@@ -40,14 +40,14 @@ var controller = {};
 
 controller.transporter = transporter;
 
-function sendOne(templateName, options, data, callback){
+function sendOne(templateName, options, data, callback) {
 
   if (NODE_ENV === "dev") {
     console.log(templateName);
     console.log(JSON.stringify(data, "", 2));
   }
 
-  emailTemplates(templatesDir, function(err, template){
+  emailTemplates(templatesDir, function (err, template) {
     if (err) {
       return callback(err);
     }
@@ -57,7 +57,7 @@ function sendOne(templateName, options, data, callback){
     data.hackathonName = HACKATHON_NAME;
     data.twitterHandle = TWITTER_HANDLE;
     data.facebookHandle = FACEBOOK_HANDLE;
-    template(templateName, data, function(err, html, text){
+    template(templateName, data, function (err, html, text) {
       if (err) {
         return callback(err);
       }
@@ -68,8 +68,8 @@ function sendOne(templateName, options, data, callback){
         subject: options.subject,
         html: html,
         text: text
-      }, function(err, info){
-        if(callback){
+      }, function (err, info) {
+        if (callback) {
           callback(err, info);
         }
       });
@@ -84,11 +84,11 @@ function sendOne(templateName, options, data, callback){
  * @param  {Function} callback [description]
  * @return {[type]}            [description]
  */
-controller.sendVerificationEmail = function(email, token, callback) {
+controller.sendVerificationEmail = function (email, token, callback) {
 
   var options = {
     to: email,
-    subject: "["+HACKATHON_NAME+"] - Подтверждение email"
+    subject: "[" + HACKATHON_NAME + "] - Подтверждение email"
   };
 
   var locals = {
@@ -101,14 +101,14 @@ controller.sendVerificationEmail = function(email, token, callback) {
    *   verifyUrl: the url that the user must visit to verify their account
    * }
    */
-  sendOne('email-verify', options, locals, function(err, info){
-    if (err){
+  sendOne('email-verify', options, locals, function (err, info) {
+    if (err) {
       console.log(err);
     }
-    if (info){
+    if (info) {
       console.log(info.message);
     }
-    if (callback){
+    if (callback) {
       callback(err, info);
     }
   });
@@ -116,82 +116,122 @@ controller.sendVerificationEmail = function(email, token, callback) {
 };
 
 /**
- * Send a password recovery email.
+ * Send a verification email to a user, with a verification token to enter.
  * @param  {[type]}   email    [description]
- * @param  {[type]}   token    [description]
  * @param  {Function} callback [description]
+ * @return {[type]}            [description]
  */
-controller.sendPasswordResetEmail = function(email, token, callback) {
+controller.sendInvitationEmail = function (email, callback) {
 
   var options = {
     to: email,
-    subject: "["+HACKATHON_NAME+"] - Запрошен сброс пароля!"
+    subject: "[" + HACKATHON_NAME + "] -  Congrats! You are selected for Hack.Moscow 2018!"
   };
 
+  /**
+   * Eamil-verify takes a few template values:
+   * {
+   *   verifyUrl: the url that the user must visit to verify their account
+   * }
+   */
   var locals = {
-    title: 'Запрошен сброс пароля',
+    title: 'You have been accepted to Hack.Moscow 2018!',
     subtitle: '',
-    description: 'Кто-то (надеемся, что Вы!) запросили сброс пароля. Если ' +
+    description: 'You have been accepted to Hack.Moscow 2018! One last important thing to remember: confirm your spot by filling in the confirmation form at your Hack.Moscow Dashboard.' +
+    " In case something else has come along and you won't be able to come, please cancel your spot so another applicant is able to join Hack.Moscow 2018.",
+    actionUrl: 'http://registration.hack.moscow',
+    actionName: "Confirm your attendance"
+  };
+  sendOne('email-link-action', options, locals, function (err, info) {
+    if (err) {
+      console.log(err);
+    }
+    if (info) {
+      console.log(info.message);
+    }
+    if (callback) {
+      callback(err, info);
+    }
+  });
+
+
+  /**
+   * Send a password recovery email.
+   * @param  {[type]}   email    [description]
+   * @param  {[type]}   token    [description]
+   * @param  {Function} callback [description]
+   */
+  controller.sendPasswordResetEmail = function (email, token, callback) {
+
+    var options = {
+      to: email,
+      subject: "[" + HACKATHON_NAME + "] - Запрошен сброс пароля!"
+    };
+
+    var locals = {
+      title: 'Запрошен сброс пароля',
+      subtitle: '',
+      description: 'Кто-то (надеемся, что Вы!) запросили сброс пароля. Если ' +
       'это были не Вы, то спокойно удаляйте это письмо. Ссылка станет неактивной через час.',
-    actionUrl: ROOT_URL + '/reset/' + token,
-    actionName: "Сбросить пароль"
+      actionUrl: ROOT_URL + '/reset/' + token,
+      actionName: "Сбросить пароль"
+    };
+
+    /**
+     * Eamil-verify takes a few template values:
+     * {
+   *   verifyUrl: the url that the user must visit to verify their account
+   * }
+     */
+    sendOne('email-link-action', options, locals, function (err, info) {
+      if (err) {
+        console.log(err);
+      }
+      if (info) {
+        console.log(info.message);
+      }
+      if (callback) {
+        callback(err, info);
+      }
+    });
+
   };
 
   /**
-   * Eamil-verify takes a few template values:
-   * {
+   * Send a password recovery email.
+   * @param  {[type]}   email    [description]
+   * @param  {Function} callback [description]
+   */
+  controller.sendPasswordChangedEmail = function (email, callback) {
+
+    var options = {
+      to: email,
+      subject: "[" + HACKATHON_NAME + "] - Ваш пароль изменён!"
+    };
+
+    var locals = {
+      title: 'Ваш пароль изменён',
+      body: 'Кто-то (надеемся, что Вы!) успешно изменили пароль от учетной записи.',
+    };
+
+    /**
+     * Eamil-verify takes a few template values:
+     * {
    *   verifyUrl: the url that the user must visit to verify their account
    * }
-   */
-  sendOne('email-link-action', options, locals, function(err, info){
-    if (err){
-      console.log(err);
-    }
-    if (info){
-      console.log(info.message);
-    }
-    if (callback){
-      callback(err, info);
-    }
-  });
+     */
+    sendOne('email-basic', options, locals, function (err, info) {
+      if (err) {
+        console.log(err);
+      }
+      if (info) {
+        console.log(info.message);
+      }
+      if (callback) {
+        callback(err, info);
+      }
+    });
 
-};
-
-/**
- * Send a password recovery email.
- * @param  {[type]}   email    [description]
- * @param  {Function} callback [description]
- */
-controller.sendPasswordChangedEmail = function(email, callback){
-
-  var options = {
-    to: email,
-    subject: "["+HACKATHON_NAME+"] - Ваш пароль изменён!"
   };
 
-  var locals = {
-    title: 'Ваш пароль изменён',
-    body: 'Кто-то (надеемся, что Вы!) успешно изменили пароль от учетной записи.',
-  };
-
-  /**
-   * Eamil-verify takes a few template values:
-   * {
-   *   verifyUrl: the url that the user must visit to verify their account
-   * }
-   */
-  sendOne('email-basic', options, locals, function(err, info){
-    if (err){
-      console.log(err);
-    }
-    if (info){
-      console.log(info.message);
-    }
-    if (callback){
-      callback(err, info);
-    }
-  });
-
-};
-
-module.exports = controller;
+  module.exports = controller;
