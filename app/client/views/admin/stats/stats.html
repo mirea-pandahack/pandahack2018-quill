@@ -200,6 +200,35 @@
     <div class="ui divider"></div>
   </div>
 
+  <!--По универам-->
+  <div
+      class="ui pink segment"
+      ng-class="{'loading': loading}">
+    <div class="ui header">
+      Универы
+    </div>
+
+    <table class="ui single line table">
+      <thead>
+      <tr>
+        <th>Универ</th>
+        <th>Сколько</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr
+          class="item"
+          ng-repeat="school in stats.schoolsStats">
+        <td>{{school.name}}</td>
+        <td>{{school.count}}/td>
+      </tr>
+
+      </tbody>
+    </table>
+    <div class="ui divider"></div>
+  </div>
+
   <!--Обзвон-->
   <div
       class="ui pink segment"
@@ -235,12 +264,8 @@
 
         </tbody>
       </table>
-
-
     </div>
     <div class="ui divider"></div>
-
-
   </div>
 
   <!--Тачки -->
@@ -277,36 +302,32 @@
   </div>
 
   <!--ФИО и заметки-->
-
   <div
       class="ui pink segment"
       ng-class="{'loading': loading}">
     <div class="ui header">
       ФИО и заметки
     </div>
-    <div class="ui list">
-      <div class="item">
-        <i class="users icon"></i>
-        <div class="content">
-          <strong>Total users</strong>: {{stats.total}}
-        </div>
-      </div>
-      <div class="item">
-        <i class="female icon"></i>
-        <div class="content">
-          <strong>Female</strong>: {{stats.demo.gender['F']}} ({{stats.demo.gender['F'] / stats.total * 100 | number:1}}%)
-        </div>
-      </div>
-      <div class="item">
-        <i class="male icon"></i>
-        <div class="content">
-          <strong>Male</strong>: {{stats.demo.gender['M']}} ({{stats.demo.gender['M'] / stats.total * 100 | number:1}}%)
-        </div>
-      </div>
-    </div>
+
+    <table class="ui single line table">
+      <thead>
+      <tr>
+        <th>Name</th>
+        <th>Note</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <tr
+          class="item"
+          ng-repeat="user in stats.usersNotes | orderBy: 'name'">
+        <td>{{user.name}}</td>
+        <td>{{user.note}}</td>
+      </tr>
+
+      </tbody>
+    </table>
     <div class="ui divider"></div>
-
-
   </div>
 
   <!--Демография-->

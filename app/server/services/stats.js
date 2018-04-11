@@ -91,7 +91,9 @@ function calculateStats() {
     },
     statChoosenTaskSum: 0,
     statNeedToCall: 0,
-    needToCallUsers: []
+    needToCallUsers: [],
+    usersNotes: [],
+    schoolsStats: {},
 
   };
 
@@ -123,10 +125,32 @@ function calculateStats() {
             name: user.profile.name,
             phone: user.confirmation.phone,
             ntime: user.confirmation.needToCall_time
-        });
+          });
+        }
+
+        //User notes
+        if(user.profile.essay){
+          newStats.usersNotes.push({
+            name: user.name,
+            note: user.profile.essay
+          });
+        }
+
+        //Count universities
+        if (user.profile.school && user.profile.school.length > 0) {
+          if (!newStats.schoolsStats[user.profile.school]) {
+            newStats.schoolsStats[user.profile.school] = {
+              count: 0,
+              name: user.profile.school
+            };
+          }
+
+          newStats.schoolsStats[user.profile.school].count++;
         }
 
 
+
+//--------------------------------------------------------------------------------------------
 
 
         // Grab the email extension
