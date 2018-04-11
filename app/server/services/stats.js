@@ -240,7 +240,7 @@ function calculateStats(){
           });
         newStats.demo.schools = schools;
 
-        Likewise, transform the teams into an array of objects
+        // Likewise, transform the teams into an array of objects
         var teams = [];
         _.keys(newStats.teams)
           .forEach(function(key){
