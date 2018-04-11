@@ -131,7 +131,7 @@ function calculateStats() {
         //User notes
         if (user.profile.essay) {
           newStats.usersNotes.push({
-            name: user.name,
+            name: user.profile.name,
             note: user.profile.essay
           });
         }
