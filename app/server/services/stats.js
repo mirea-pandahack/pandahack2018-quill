@@ -129,7 +129,7 @@ function calculateStats() {
         }
 
         //User notes
-        if(user.profile.essay){
+        if (user.profile.essay) {
           newStats.usersNotes.push({
             name: user.name,
             note: user.profile.essay
@@ -137,17 +137,38 @@ function calculateStats() {
         }
 
         //Count universities
+        //special check for MIREA
+        function isMirea(schoolName) {
+          schoolName = schoolName.toLowerCase();
+          if (schoolName.includes("мирэа")) {
+            return true;
+          }
+          if (schoolName.includes("mirea")) {
+            return true;
+          }
+          if (schoolName.includes("мту")) {
+            return true;
+          }
+          return false;
+        }
+
         if (user.profile.school && user.profile.school.length > 0) {
-          if (!newStats.schoolsStats[user.profile.school]) {
-            newStats.schoolsStats[user.profile.school] = {
+          let school = user.profile.school;
+
+          //check if it is MIREA
+          if(isMirea(school)){
+            school = 'МИРЭА';
+          }
+
+          if (!newStats.schoolsStats[school]) {
+            newStats.schoolsStats[school] = {
               count: 0,
-              name: user.profile.school
+              name: school
             };
           }
 
-          newStats.schoolsStats[user.profile.school].count++;
+          newStats.schoolsStats[school].count++;
         }
-
 
 
 //--------------------------------------------------------------------------------------------
