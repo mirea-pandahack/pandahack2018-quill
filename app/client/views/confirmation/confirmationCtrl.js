@@ -89,7 +89,7 @@ angular.module('reg')
               rules: [
                 {
                   type: 'empty',
-                  prompt: 'Номер телефона.'
+                  prompt: 'Номер телефона'
                 }
               ]
             },
