@@ -146,9 +146,12 @@ angular.module('reg')
                     let iconEl = $event.target.parentNode;
 
                     //check if it is btn
+                    console.log(iconEl);
+                    console.log(iconEl.tagName.toLowerCase());
                     if(iconEl.tagName.toLowerCase() == 'i'){
                       iconEl = $event.target.parentNode;
                     }
+                    console.log(iconEl);
 
                     iconEl = iconEl.previousElementSibling.previousElementSibling.querySelectorAll('.userAdmittedIcon')[0];
                     iconEl.classList.remove('thin');
