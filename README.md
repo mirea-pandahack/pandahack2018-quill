@@ -7,4 +7,4 @@
 Based on awesome https://github.com/techx/quill 
 
 # License
-Copyright (c) 2015-2016 Edwin Zhang (https://github.com/ehzhang). Released under AGPLv3. See [`LICENSE.txt`][license] for details.
+Copyright (c) 2015-2016 Edwin Zhang (https://github.com/ehzhang). Released under AGPLv3. See [license](./LICENSE.txt) for details.
