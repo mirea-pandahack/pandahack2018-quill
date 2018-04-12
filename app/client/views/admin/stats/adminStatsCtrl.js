@@ -1,10 +1,13 @@
 angular.module('reg')
   .controller('AdminStatsCtrl', [
     '$scope',
+    '$element',
     'UserService',
     function ($scope, UserService) {
 
       $scope.saveThisTable = function(e) {
+        console.log($element);
+        return false;
         var el = angular.element(e.srcElement);
         var fileText = "";
         var fileTitle = el.previousElementSibling.textContent;
