@@ -27,8 +27,8 @@ angular.module('reg')
       function updatePage(data) {
         //filter to show only not admitted users
         let arr = [];
-        for(let i = 0; i < data.users.length; i++){
-          if(!data.users[i].status.admitted && data.users[i].profile.name){
+        for (let i = 0; i < data.users.length; i++) {
+          if (!data.users[i].status.admitted && data.users[i].profile.name) {
             arr.push(data.users[i]);
           }
         }
@@ -141,6 +141,11 @@ angular.module('reg')
                   .sendInvitation(user._id)
                   .success(function () {
                     swal("Accepted", 'Has been admitted.', "success");
+
+                    //change status of this user
+                    let iconEl = $event.target.parentNode.previousElementSibling.previousElementSibling.querySelectorAll('.userAdmittedIcon')[0];
+                    iconEl.classList.remove('thin');
+                    iconEl.classList.add('green check');
                   });
               });
 
