@@ -94,7 +94,7 @@ angular.module('reg')
                 },
                 {
                   type: 'exactLength[10]',
-                  prompt: 'Введите номер полностью'
+                  prompt: 'Введите номер без 8'
                 }
               ]
             },
