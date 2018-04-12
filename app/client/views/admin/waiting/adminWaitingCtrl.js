@@ -28,14 +28,12 @@ angular.module('reg')
         //filter to show only not admitted users
         let arr = [];
         for(let i = 0; i < data.length; i++){
-          if(!data[i].status.admitted){
-            arr.push(data[i]);
+          if(!data.users[i].status.admitted){
+            arr.push(data.users[i]);
           }
         }
 
-        console.log(data);
-        data = arr;
-        console.log(data);
+        data.users = arr;
 
         $scope.users = data.users;
         $scope.currentPage = data.page;
