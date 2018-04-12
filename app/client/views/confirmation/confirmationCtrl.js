@@ -91,6 +91,10 @@ angular.module('reg')
                 {
                   type: 'empty',
                   prompt: 'Номер телефона'
+                },
+                {
+                  type: 'minLength[10]',
+                  prompt: 'Введите номер полностью'
                 }
               ]
             },
