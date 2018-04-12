@@ -93,8 +93,12 @@ angular.module('reg')
                   prompt: 'Номер телефона'
                 },
                 {
-                  type: 'minLength[10]',
+                  type: 'exactLength[10]',
                   prompt: 'Введите номер полностью'
+                },
+                {
+                  type: 'number',
+                  prompt: 'Введите только цифры без 8'
                 }
               ]
             },
