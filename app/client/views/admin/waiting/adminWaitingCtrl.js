@@ -50,14 +50,14 @@ angular.module('reg')
       }
 
       UserService
-        .getPage($stateParams.page, $stateParams.size, $stateParams.query)
+        .getPage($stateParams.page, 1000, $stateParams.query)
         .success(function (data) {
           updatePage(data);
         });
 
       $scope.$watch('queryText', function (queryText) {
         UserService
-          .getPage($stateParams.page, $stateParams.size, queryText)
+          .getPage($stateParams.page, 1000, queryText)
           .success(function (data) {
             updatePage(data);
           });
@@ -66,7 +66,7 @@ angular.module('reg')
       $scope.goToPage = function (page) {
         $state.go('app.admin.waiting', {
           page: page,
-          size: $stateParams.size || 50
+          size: 1000 || 50
         });
       };
 
