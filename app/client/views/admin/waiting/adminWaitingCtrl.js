@@ -33,6 +33,9 @@ angular.module('reg')
           }
         }
 
+        console.log(data);
+        console.log(arr);
+
         data.users = arr;
 
         $scope.users = data.users;
