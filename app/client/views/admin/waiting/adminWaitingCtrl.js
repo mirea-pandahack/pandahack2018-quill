@@ -28,7 +28,7 @@ angular.module('reg')
         //filter to show only not admitted users
         let arr = [];
         for(let i = 0; i < data.users.length; i++){
-          if(!data.users[i].status.admitted){
+          if(!data.users[i].status.admitted && data.users[i].profile.name){
             arr.push(data.users[i]);
           }
         }
