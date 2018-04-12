@@ -146,6 +146,7 @@ angular.module('reg')
                     let iconEl = $event.target;
 
                     //check if it is icon
+                    console.log(iconEl.tagName.toLowerCase());
                     if(iconEl.tagName.toLowerCase() == 'i'){
                       //now its btn
                       iconEl = $event.target.parentNode;
@@ -154,10 +155,11 @@ angular.module('reg')
                     //not its td
                     iconEl = $event.target.parentNode;
 
+                    //go to previous tds
                     iconEl = iconEl.previousElementSibling.previousElementSibling.querySelectorAll('.userAdmittedIcon')[0];
                     iconEl.classList.remove('thin');
                     iconEl.classList.add('green');
-                    iconEl.classList.add('green check');
+                    iconEl.classList.add('check');
                   });
               });
 
