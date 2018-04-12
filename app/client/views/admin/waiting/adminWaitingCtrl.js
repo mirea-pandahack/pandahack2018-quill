@@ -27,7 +27,7 @@ angular.module('reg')
       function updatePage(data) {
         //filter to show only not admitted users
         let arr = [];
-        for(let i = 0; i < data.length; i++){
+        for(let i = 0; i < data.users.length; i++){
           if(!data.users[i].status.admitted){
             arr.push(data.users[i]);
           }
