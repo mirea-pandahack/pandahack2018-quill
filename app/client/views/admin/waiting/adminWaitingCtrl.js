@@ -143,9 +143,16 @@ angular.module('reg')
                     swal("Accepted", 'Has been admitted.', "success");
 
                     //change status of this user
-                    let iconEl = $event.target.parentNode.previousElementSibling.previousElementSibling.querySelectorAll('.userAdmittedIcon')[0];
-                    iconEl.classList.remove('thin');
-                    iconEl.classList.add('green check');
+                    let iconEl = $event.target,
+                      iconElParent = $event.target.parentNode;
+                    console.log(iconEl);
+                    console.log(iconElParent);
+                    console.log(iconElParent.previousElementSibling);
+                    console.log(iconElParent.previousElementSibling.previousElementSibling);
+
+                    //previousElementSibling.previousElementSibling.querySelectorAll('.userAdmittedIcon')[0];
+                    //iconEl.classList.remove('thin');
+                    //iconEl.classList.add('green check');
                   });
               });
 
