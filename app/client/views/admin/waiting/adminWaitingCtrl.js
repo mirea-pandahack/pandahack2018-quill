@@ -143,7 +143,7 @@ angular.module('reg')
                     swal("Accepted", 'Has been admitted.', "success");
 
                     //change status of this user
-                    let iconEl = $event.target;
+                    let iconEl = $event.target.parentNode;
 
                     //check if it is btn
                     if(iconEl.tagName.toLowerCase() == 'i'){
