@@ -150,10 +150,15 @@ angular.module('reg')
                     if(iconEl.tagName.toLowerCase() == 'i'){
                       //now its btn
                       iconEl = $event.target.parentNode;
+                      console.log(iconEl);
                     }
+
+                    console.log(iconEl);
 
                     //not its td
                     iconEl = $event.target.parentNode;
+
+                    console.log(iconEl);
 
                     //go to previous tds
                     iconEl = iconEl.previousElementSibling.previousElementSibling.querySelectorAll('.userAdmittedIcon')[0];
