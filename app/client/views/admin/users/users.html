@@ -103,12 +103,15 @@
             ng-click="selectUser(user)"
             ng-repeat="user in users"
             ng-class="rowClass(user)">
-            <td>
+            <td
+                ng-if="user.profile.name !== undefined">
               <strong>
                 {{user.profile.name}}
-                &nbsp;
-
               </strong>
+            </td>
+            <td
+                ng-if="user.profile.name === undefined">
+              {{user.email}}
             </td>
             <td>{{user.profile.school}}</td>
             <td
