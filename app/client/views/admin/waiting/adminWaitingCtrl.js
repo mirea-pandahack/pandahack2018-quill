@@ -145,22 +145,18 @@ angular.module('reg')
                     //change status of this user
                     let iconEl = $event.target;
 
-                    //check if it is btn
-                    console.log(iconEl);
-                    console.log(iconEl.tagName.toLowerCase());
+                    //check if it is icon
                     if(iconEl.tagName.toLowerCase() == 'i'){
+                      //now its btn
                       iconEl = $event.target.parentNode;
                     }
 
+                    //not its td
                     iconEl = $event.target.parentNode;
-
-                    console.log(iconEl);
-                    console.log(iconEl.previousElementSibling);
-                    console.log(iconEl.previousElementSibling.previousElementSibling);
-                    console.log();
 
                     iconEl = iconEl.previousElementSibling.previousElementSibling.querySelectorAll('.userAdmittedIcon')[0];
                     iconEl.classList.remove('thin');
+                    iconEl.classList.add('green');
                     iconEl.classList.add('green check');
                   });
               });
