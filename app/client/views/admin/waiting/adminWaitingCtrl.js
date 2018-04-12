@@ -25,6 +25,9 @@ angular.module('reg')
       });
 
       function updatePage(data) {
+
+        console.log(data);
+
         $scope.users = data.users;
         $scope.currentPage = data.page;
         $scope.pageSize = data.size;
