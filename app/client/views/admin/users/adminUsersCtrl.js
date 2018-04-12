@@ -128,6 +128,24 @@ angular.module('reg')
                   .sendInvitation(user._id)
                   .success(function () {
                     swal("Accepted", 'Has been admitted.', "success");
+
+                    //change status of this user
+                    let iconEl = $event.target;
+
+                    //check if it is icon
+                    if(iconEl.tagName.toLowerCase() == 'i'){
+                      //now its btn
+                      iconEl = $event.target.parentNode;
+                    }
+
+                    //not its td
+                    iconEl = iconEl.parentNode;
+
+                    //go to previous tds
+                    iconEl = iconEl.previousElementSibling.previousElementSibling.querySelectorAll('.userAdmittedIcon')[0];
+                    iconEl.classList.remove('thin');
+                    iconEl.classList.add('green');
+                    iconEl.classList.add('check');
                   });
               });
 
