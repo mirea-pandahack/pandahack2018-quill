@@ -128,6 +128,14 @@ angular.module('reg')
         templateUrl: "views/admin/users/users.html",
         controller: 'AdminUsersCtrl'
       })
+      .state('app.admin.waiting', {
+        url: "/admin/waiting?" +
+        '&page' +
+        '&size' +
+        '&query',
+        templateUrl: "views/admin/waiting/waiting.html",
+        controller: 'AdminWaitingCtrl'
+      })
       .state('app.admin.user', {
         url: "/admin/users/:id",
         templateUrl: "views/admin/user/user.html",
