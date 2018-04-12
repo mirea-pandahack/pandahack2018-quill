@@ -5,9 +5,7 @@ angular.module('reg')
     function ($scope, UserService) {
 
       $scope.saveThisTable = function($event) {
-        console.log($event.target);
-        return false;
-        var el = angular.element(e.srcElement);
+        var el = $event.target;
         var fileText = "";
         var fileTitle = el.previousElementSibling.textContent;
         var tableBody = el.nextElementSibling.querySelectorAll('tbody')[0];
