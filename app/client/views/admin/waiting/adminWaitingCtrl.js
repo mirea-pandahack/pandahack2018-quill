@@ -33,7 +33,9 @@ angular.module('reg')
           }
         }
 
+        console.log(data);
         data = arr;
+        console.log(data);
 
         $scope.users = data.users;
         $scope.currentPage = data.page;
@@ -47,14 +49,14 @@ angular.module('reg')
       }
 
       UserService
-        .getPage($stateParams.page, 1000, $stateParams.query)
+        .getPage($stateParams.page, $stateParams.size, $stateParams.query)
         .success(function (data) {
           updatePage(data);
         });
 
       $scope.$watch('queryText', function (queryText) {
         UserService
-          .getPage($stateParams.page, 1000, queryText)
+          .getPage($stateParams.page, $stateParams.size, queryText)
           .success(function (data) {
             updatePage(data);
           });
@@ -63,7 +65,7 @@ angular.module('reg')
       $scope.goToPage = function (page) {
         $state.go('app.admin.waiting', {
           page: page,
-          size: 1000 || 50
+          size: $stateParams.size || 50
         });
       };
 
