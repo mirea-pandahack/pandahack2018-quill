@@ -143,7 +143,7 @@ angular.module('reg')
                     swal("Accepted", 'Has been admitted.', "success");
 
                     //change status of this user
-                    let iconEl = $event.target.parentNode;
+                    let iconEl = $event.target;
 
                     //check if it is btn
                     console.log(iconEl);
@@ -151,6 +151,9 @@ angular.module('reg')
                     if(iconEl.tagName.toLowerCase() == 'i'){
                       iconEl = $event.target.parentNode;
                     }
+
+                    iconEl = $event.target.parentNode;
+
                     console.log(iconEl);
                     console.log(iconEl.previousElementSibling);
                     console.log(iconEl.previousElementSibling.previousElementSibling);
