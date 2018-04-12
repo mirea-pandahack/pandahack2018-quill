@@ -7,7 +7,7 @@ angular.module('reg')
       $scope.saveThisTable = function($event) {
         var el = $event.target;
         var fileText = "";
-        var fileTitle = el.previousElementSibling.textContent;
+        var fileTitle = el.previousElementSibling.textContent.replace('\n', '').trim();
         var tableBody = el.nextElementSibling.querySelectorAll('tbody')[0];
         var tableRows = tableBody.querySelectorAll('tr');
         var columnsAmount = tableRows[0].children.length;
