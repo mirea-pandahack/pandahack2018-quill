@@ -3,7 +3,7 @@ angular.module('reg')
     '$scope',
     '$element',
     'UserService',
-    function ($scope, UserService) {
+    function ($scope, $element, UserService) {
 
       $scope.saveThisTable = function(e) {
         console.log($element);
