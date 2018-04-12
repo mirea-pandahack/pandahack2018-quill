@@ -95,10 +95,6 @@ angular.module('reg')
                 {
                   type: 'exactLength[10]',
                   prompt: 'Введите номер полностью'
-                },
-                {
-                  type: 'number',
-                  prompt: 'Введите только цифры без 8'
                 }
               ]
             },
