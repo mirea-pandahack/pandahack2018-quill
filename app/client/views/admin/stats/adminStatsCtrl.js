@@ -1,12 +1,11 @@
 angular.module('reg')
   .controller('AdminStatsCtrl', [
     '$scope',
-    '$element',
     'UserService',
-    function ($scope, $element, UserService) {
+    function ($scope, UserService) {
 
-      $scope.saveThisTable = function(e) {
-        console.log($element);
+      $scope.saveThisTable = function($event) {
+        console.log($event.target);
         return false;
         var el = angular.element(e.srcElement);
         var fileText = "";
