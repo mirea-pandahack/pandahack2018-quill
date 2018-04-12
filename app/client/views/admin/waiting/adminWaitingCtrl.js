@@ -152,6 +152,9 @@ angular.module('reg')
                       iconEl = $event.target.parentNode;
                     }
                     console.log(iconEl);
+                    console.log(iconEl.previousElementSibling);
+                    console.log(iconEl.previousElementSibling.previousElementSibling);
+                    console.log();
 
                     iconEl = iconEl.previousElementSibling.previousElementSibling.querySelectorAll('.userAdmittedIcon')[0];
                     iconEl.classList.remove('thin');
