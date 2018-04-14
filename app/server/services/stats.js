@@ -258,6 +258,16 @@ function calculateStats() {
             newStats.teams[user.teamCode] = [];
           }
           newStats.teams[user.teamCode].push(user.profile.name);
+
+          //parse team challenge
+          if(newStats.teams[user.teamCode].challenge === undefined){
+            newStats.teams[user.teamCode].challenge = user.confirmation.choosenTask;
+
+          }else{
+            if(newStats.teams[user.teamCode].challenge !== user.confirmation.choosenTask){
+              newStats.teams[user.teamCode].challenge += ' [ИЛИ] '.user.confirmation.choosenTask;
+            }
+          }
         }
 
         // Count total teams

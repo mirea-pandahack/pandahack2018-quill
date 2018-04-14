@@ -488,6 +488,47 @@
       </div>
     </div>
   </div>
+
+  <!--Команда, состав и направление-->
+  <div class="ui accordion">
+    <div class="title">
+      <i class="dropdown icon"></i>
+      Команда, состав и направление
+    </div>
+    <div class="content">
+      <div
+          class="ui pink segment"
+          ng-class="{'loading': loading}">
+        <div class="ui header">
+          Команда, состав и направление
+        </div>
+
+        <button ng-click="saveThisTable($event);">Скачать txt</button>
+
+        <table class="ui table">
+          <thead>
+          <tr>
+            <th>Команда</th>
+            <th>Направление</th>
+            <th>Участники</th>
+          </tr>
+          </thead>
+          <tbody>
+
+          <tr
+              class="item"
+              ng-repeat="team in stats.teams | orderBy: 'name'">
+            <td>{{team.name}}</td>
+            <td>{{team.challenge}}</td>
+            <td>{{team.users.join(', ')}}</td>
+          </tr>
+
+          </tbody>
+        </table>
+        <div class="ui divider"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 </div>
