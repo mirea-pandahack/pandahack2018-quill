@@ -88,6 +88,17 @@
           <i class="green circle check icon"></i>
           <div class="content">
             <strong>
+              Заполнили ФИО всего
+            </strong> :
+            {{stats.submitted}}
+          </div>
+        </div>
+
+        <div
+            class="item">
+          <i class="green circle check icon"></i>
+          <div class="content">
+            <strong>
               Подтвердили почту
             </strong> :
             {{stats.verified}} ({{stats.verified / stats.total * 100 | number: 1}}%)
