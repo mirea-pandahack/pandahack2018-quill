@@ -66,7 +66,7 @@
             <strong>
               Приглашено, но пока не подтвердил участие
             </strong> :
-            {{stats.admitted}}
+            {{stats.admitted - stats.confirmed - stats.declined}}
           </div>
         </div>
 
@@ -77,7 +77,7 @@
             <strong>
               Заполнили форму/Ждут одобрения заявки
             </strong> :
-            {{stats.submitted}} ({{stats.submitted / stats.total * 100 | number: 1}}%)
+            {{stats.submitted - stats.admitted}}
           </div>
         </div>
 
