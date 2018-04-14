@@ -261,10 +261,11 @@ function calculateStats() {
 
           //parse team challenge
           if(newStats.teams[user.teamCode].challenge === undefined){
-            newStats.teams[user.teamCode].challenge = user.confirmation.choosenTask;
-
+            if(user.confirmation.choosenTask){
+              newStats.teams[user.teamCode].challenge = user.confirmation.choosenTask;
+            }
           }else{
-            if(newStats.teams[user.teamCode].challenge !== user.confirmation.choosenTask){
+            if(user.confirmation.choosenTask && newStats.teams[user.teamCode].challenge !== user.confirmation.choosenTask){
               newStats.teams[user.teamCode].challenge += ' [ИЛИ] ' + user.confirmation.choosenTask;
             }
           }
