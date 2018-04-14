@@ -255,9 +255,11 @@ function calculateStats() {
         // Grab the team name if there is one
         if (user.teamCode && user.teamCode.length > 0) {
           if (!newStats.teams[user.teamCode]) {
-            newStats.teams[user.teamCode] = [];
+            newStats.teams[user.teamCode] = {
+              users: []
+            };
           }
-          newStats.teams[user.teamCode].push(user.profile.name);
+          newStats.teams[user.teamCode].users.push(user.profile.name);
 
           //parse team challenge
           if(newStats.teams[user.teamCode].challenge === undefined){
@@ -338,7 +340,8 @@ function calculateStats() {
           .forEach(function (key) {
             teams.push({
               name: key,
-              users: newStats.teams[key]
+              challenge: newStats.teams[key].challenge,
+              users: newStats.teams[key].users
             });
           });
         newStats.teams = teams;
