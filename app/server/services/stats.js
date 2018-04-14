@@ -112,8 +112,37 @@ function calculateStats() {
       async.each(users, function (user, callback) {
 
         // Count people for each task
-        if (user.confirmation.choosenTask in newStats.statChoosenTask) {
-          newStats.statChoosenTask[user.confirmation.choosenTask] += 1;
+
+        var tasksTranslit = [
+          {
+            ru: "Сибинтек",
+            en: "Sibintek"
+          },
+          {
+            ru: "Галактика",
+            en: "Galaktika",
+          },
+          {
+            ru: "Кодабра",
+            en: "Codabra",
+          },
+          {
+            ru: "Я ещё не выбрал[мы не сможем предоставить Вам комплект оборудования]",
+            en: "No",
+          }
+        ];
+
+        if (user.confirmation.choosenTask) {
+          if (user.confirmation.choosenTask in newStats.statChoosenTask) {
+            newStats.statChoosenTask[user.confirmation.choosenTask] += 1;
+          } else {
+            for (let k = 0; k < tasksTranslit.length; k++) {
+              if (tasksTranslit[k].ru === user.confirmation.choosenTask) {
+                newStats.statChoosenTask[tasksTranslit[k].en] += 1;
+                break;
+              }
+            }
+          }
         }
 
         // for(let taskSum in newStats.statChoosenTask) {
@@ -262,12 +291,12 @@ function calculateStats() {
           newStats.teams[user.teamCode].users.push(user.profile.name);
 
           //parse team challenge
-          if(newStats.teams[user.teamCode].challenge === undefined){
-            if(user.confirmation.choosenTask){
+          if (newStats.teams[user.teamCode].challenge === undefined) {
+            if (user.confirmation.choosenTask) {
               newStats.teams[user.teamCode].challenge = user.confirmation.choosenTask;
             }
-          }else{
-            if(user.confirmation.choosenTask && newStats.teams[user.teamCode].challenge !== user.confirmation.choosenTask){
+          } else {
+            if (user.confirmation.choosenTask && newStats.teams[user.teamCode].challenge !== user.confirmation.choosenTask) {
               newStats.teams[user.teamCode].challenge += ' [ИЛИ] ' + user.confirmation.choosenTask;
             }
           }
