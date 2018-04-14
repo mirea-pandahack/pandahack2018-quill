@@ -265,7 +265,7 @@ function calculateStats() {
 
           }else{
             if(newStats.teams[user.teamCode].challenge !== user.confirmation.choosenTask){
-              newStats.teams[user.teamCode].challenge += ' [ИЛИ] '.user.confirmation.choosenTask;
+              newStats.teams[user.teamCode].challenge += ' [ИЛИ] ' + user.confirmation.choosenTask;
             }
           }
         }
