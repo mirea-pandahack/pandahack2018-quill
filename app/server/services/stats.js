@@ -288,7 +288,7 @@ function calculateStats() {
               users: []
             };
           }
-          newStats.teams[user.teamCode].users.push(user.profile.name);
+          newStats.teams[user.teamCode].users.push(user.profile.name += '(' + user.profile.phone + ')');
 
           //parse team challenge
           if (newStats.teams[user.teamCode].challenge === undefined) {
